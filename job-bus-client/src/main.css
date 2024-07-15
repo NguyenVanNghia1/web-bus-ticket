@@ -1,0 +1,4260 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:wght@500;7008 family=Spartan:wght@300;400;500&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+:root {
+  --title: rgb(8, 117, 77);
+  --PrimaryColor: rgb(235, 0, 0);
+  --SecondaryColor: hsl(180, 17%, 95%);
+  --colorOne: hsl(15, 74%, 70%);
+  --colorTwo: hsl(28, 100%, 82%);
+  --colorThree: rgb(255,247,245);
+  --HoverColor: hsl(0, 98%, 35%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 12%);
+  --textColor: hsl(240, 1%, 48%);
+  --borderColor: hsl(0, 0%, 83%);
+  --whiteColorDream: hsl(0, 0%, 93%);
+  --grayBg: hsl(0, 0%, 96%);
+  --grayText: rgb(145, 145, 145);
+  --inputColor: hsl(330, 12%, 97%);
+  --boxShadow: box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  --transition: .4s ease-in-out;
+}
+
+body {
+  background: var(--whiteColor);
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.section {
+  padding: 4rem 0 2rem;
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.icon {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+}
+
+.none {
+  display: none;
+}
+
+.btn {
+  padding: 0.7rem 1.5rem;
+  background: var(--PrimaryColor);
+  border: none;
+  outline: none;
+  border-radius: 3rem;
+  cursor: pointer;
+  color: var(--whiteColor);
+}
+.btn a {
+  color: var(--whiteColor);
+  font-weight: 500;
+}
+.btn:hover {
+  background: var(--HoverColor);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgb(255, 0, 0);
+}
+
+img, video {
+  width: 100%;
+  height: auto;
+}
+
+input {
+  font-size: 100%;
+  color: var(--blackColor);
+}
+
+p {
+  font-size: 13px;
+  color: var(--grayText);
+  line-height: 22px;
+}
+
+h4 {
+  padding: 1rem 0;
+  font-weight: 700;
+  color: var(--blackColor);
+}
+
+h1 {
+  font-size: 25px;
+  padding: 1rem 0;
+  color: var(--blackColor);
+}
+
+.navBar {
+  position: fixed;
+  flex-direction: column;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+}
+.navBar .navBarOne, .navBar .navBarTwo {
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+}
+.navBar .navBarOne {
+  background: var(--SecondaryColor);
+}
+.navBar .navBarOne .none {
+  display: flex;
+  gap: 1.5rem;
+}
+.navBar .navBarOne .none li {
+  font-size: 13px;
+  gap: 0.5rem;
+  color: var(--textColor);
+}
+.navBar .navBarOne .none li:hover {
+  color: var(--PrimaryColor);
+  text-decoration: underline;
+}
+.navBar .navBarOne .atb {
+  gap: 1rem;
+}
+.navBar .navBarOne .atb span {
+  color: var(--blackColor);
+  font-size: 13px;
+  cursor: pointer;
+}
+.navBar .navBarOne .atb span:hover {
+  color: var(--PrimaryColor);
+  font-size: 700;
+}
+.navBar .navBarOne .atb .avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.navBar .navBarTwo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 3rem;
+  padding: 1.5rem 1rem;
+  position: fixed;
+  transition: 0.3s ease-in-out;
+}
+.navBar .navBarTwo .logoDiv .Logo {
+  width: 40%;
+  margin-bottom: -10px;
+}
+@media screen and (max-width: 768px) {
+  .navBar .navBarTwo .navBarMenu {
+    position: absolute;
+    background-color: var(--SecondaryColor);
+    padding: 1.5rem;
+    border-radius: 10px;
+    top: 5rem;
+    right: -50%;
+    width: 80%;
+    transform: translateX(50%);
+    z-index: 2000;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    border: 3px solid var(--whiteColor);
+    transition: 0.4s ease-in-out;
+  }
+  .navBar .navBarTwo .navBarMenu .menu {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .navBar .navBarTwo .navBarMenu .menu .listItem {
+    padding: 0.5rem 0;
+    cursor: pointer;
+    color: var(--blackColor);
+  }
+  .navBar .navBarTwo .navBarMenu .menu .listItem::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 3px;
+    background-color: red;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  .navBar .navBarTwo .navBarMenu .menu .listItem:hover {
+    color: var(--PrimaryColor);
+    font-weight: 700;
+  }
+  .navBar .navBarTwo .navBarMenu .menu .listItem:hover::after {
+    transform: scaleX(1);
+  }
+  .navBar .navBarTwo .navBarMenu .btnOne {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 1rem;
+    text-align: center;
+    align-items: center;
+  }
+  .navBar .navBarTwo .btnTwo {
+    display: none;
+  }
+}
+.navBar .navBarTwo .toggleIcon .icon {
+  font-size: 30px;
+  color: var(--blackColor);
+}
+.navBar .navBarTwo .showNavBar {
+  right: 50%;
+  transition: 0.5s ease-in-out;
+}
+.navBar .navbar_with_Bg {
+  background: var(--SecondaryColor);
+  padding: 0.5rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.home {
+  max-width: 100%;
+  padding-top: 16rem;
+  text-align: center;
+  gap: 2rem;
+  flex-direction: column;
+}
+.home .mainText {
+  color: var(--blackColor);
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 2.5rem;
+}
+.home .homeImages {
+  width: 100%;
+  margin: 1rem auto 0;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 5rem;
+}
+.home .videoDiv {
+  width: 100%;
+}
+.home .videoDiv .video {
+  border-radius: 10rem;
+}
+.home .bus {
+  position: absolute;
+  width: 55%;
+  top: 35%;
+}
+
+.search {
+  background-color: var(--colorThree);
+  max-width: 100%;
+}
+.search .sectionContainer {
+  width: 100%;
+  padding: 1.5rem;
+  border: 1px solid rgb(247, 89, 9);
+  border-radius: 16px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  row-gap: 2rem;
+  margin-top: 50px;
+}
+.search .sectionContainer .header-search {
+  text-align: center;
+  font-weight: 700;
+}
+.search .sectionContainer .btnSearch {
+  justify-content: center;
+  align-items: center;
+}
+.search .sectionContainer .SelectButton {
+  justify-content: center;
+  flex-direction: row;
+  gap: 2rem;
+}
+.search .sectionContainer .searchInputs {
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+.search .sectionContainer .searchInputs .singleInput .iconDiv {
+  padding: 16px 10px;
+  border-radius: 3rem;
+  background: var(--SecondaryColor);
+  margin-right: 1rem;
+}
+.search .sectionContainer .searchInputs .singleInput .iconDiv .icon {
+  color: var(--blackColor);
+}
+.search .sectionContainer .searchInputs .singleInput .texts h4 {
+  padding-top: 0;
+  padding-bottom: 0.7rem;
+  color: var(--blackColor);
+  font-weight: 700;
+}
+.search .sectionContainer .searchInputs .singleInput .texts input {
+  width: 95%;
+  border: 1px solid #ccc;
+  caret-color: red;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+.search .sectionContainer .searchInputs .singleInput .texts input::-moz-placeholder {
+  opacity: 0.5;
+}
+.search .sectionContainer .searchInputs .singleInput .texts input::placeholder {
+  opacity: 0.5;
+}
+.search .sectionContainer .searchInputs .singleInput .texts input[type=date] {
+  width: 203px;
+  height: 45px;
+  margin-right: 10px;
+}
+.search .sectionContainer .searchInputs .singleInput .texts input[type=date]:hover {
+  border: 1px solid;
+  border-color: rgb(7, 124, 46);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+.search .sectionContainer .searchInputs .singleInput .texts input[type=text]:hover {
+  border: 1px solid;
+  border-color: rgb(7, 124, 46);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+.search .sectionContainer .searchInputs .singleInput .texts input[type=number]:hover {
+  border: 1px solid;
+  border-color: rgb(7, 124, 46);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.departurePoint {
+  position: relative;
+}
+.departurePoint .departureInput {
+  width: 200px;
+  height: 40px;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+}
+.departurePoint .departureInput:hover {
+  border: 1px solid;
+  border-color: rgb(7, 124, 46);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+.departurePoint .departurePopup {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.departurePoint .departurePopup .popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  max-height: 80%;
+  overflow-y: auto;
+}
+.departurePoint .departurePopup .popup-content h4 {
+  margin-top: 0;
+  color: rgb(239, 82, 34);
+}
+.departurePoint .departurePopup .popup-content input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 95%;
+  border: 1px solid #ccc;
+  caret-color: red;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+.departurePoint .departurePopup .popup-content input::-moz-placeholder {
+  opacity: 0.5;
+}
+.departurePoint .departurePopup .popup-content input::placeholder {
+  opacity: 0.5;
+}
+.departurePoint .departurePopup .popup-content input:hover {
+  border: 1px solid;
+  border-color: rgb(7, 124, 46);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+.departurePoint .departurePopup .popup-content .chonTinh {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  height: 157px;
+}
+.departurePoint .departurePopup .popup-content .recent-searches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.departurePoint .departurePopup .popup-content .recent-searches .recent-search-item {
+  display: flex;
+  align-items: center;
+  background: #f0f0f0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 1px solid rgb(211, 211, 211);
+}
+.departurePoint .departurePopup .popup-content .recent-searches .recent-search-item:hover {
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.departurePoint .departurePopup .popup-content .recent-searches .recent-search-item:hover .delete-button {
+  display: flex;
+}
+.departurePoint .departurePopup .popup-content .recent-searches .recent-search-item .delete-button {
+  margin-left: 5px;
+  color: red;
+  font-weight: bold;
+  display: none;
+}
+.departurePoint .departurePopup .popup-content .recent-searches .recent-search-item button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.departurePoint .departurePopup .popup-content .close {
+  gap: 10px;
+  color: #f20707;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.destinationPoint .destinationInput {
+  width: 200px;
+  height: 40px;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+}
+.destinationPoint .destinationInput:hover {
+  border: 1px solid;
+  border-color: rgb(7, 124, 46);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+.destinationPoint .destinationPopup {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.destinationPoint .destinationPopup .popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  max-height: 80%;
+  overflow-y: auto;
+}
+.destinationPoint .destinationPopup .popup-content h4 {
+  margin-top: 0;
+  color: rgb(239, 82, 34);
+}
+.destinationPoint .destinationPopup .popup-content input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 95%;
+  border: 1px solid #ccc;
+  caret-color: red;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+.destinationPoint .destinationPopup .popup-content input::-moz-placeholder {
+  opacity: 0.5;
+}
+.destinationPoint .destinationPopup .popup-content input::placeholder {
+  opacity: 0.5;
+}
+.destinationPoint .destinationPopup .popup-content input:hover {
+  border: 1px solid;
+  border-color: rgb(7, 124, 46);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+.destinationPoint .destinationPopup .popup-content .chonTinh {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  height: 157px;
+}
+.destinationPoint .destinationPopup .popup-content .recent-searches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.destinationPoint .destinationPopup .popup-content .recent-searches .recent-search-item {
+  display: flex;
+  align-items: center;
+  background: #f0f0f0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 1px solid rgb(211, 211, 211);
+}
+.destinationPoint .destinationPopup .popup-content .recent-searches .recent-search-item:hover {
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.destinationPoint .destinationPopup .popup-content .recent-searches .recent-search-item:hover .delete-button {
+  display: flex;
+}
+.destinationPoint .destinationPopup .popup-content .recent-searches .recent-search-item .delete-button {
+  margin-left: 5px;
+  color: red;
+  font-weight: bold;
+  display: none;
+}
+.destinationPoint .destinationPopup .popup-content .recent-searches .recent-search-item button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.destinationPoint .destinationPopup .popup-content .close {
+  gap: 10px;
+  color: #f20707;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.content {
+  background-color: rgb(255, 255, 255);
+  max-width: 100%;
+}
+.content .sectionContainer .tittlesDiv {
+  text-align: center;
+}
+.content .sectionContainer .infoDiv {
+  margin-top: 2rem;
+  gap: 1.5rem;
+}
+.content .sectionContainer .infoDiv .textDiv {
+  gap: 1.5 rem;
+}
+.content .sectionContainer .infoDiv .textDiv .singleInfo .imgContent {
+  max-width: 10%;
+  border-radius: 20px;
+}
+.content .sectionContainer .infoDiv .imgDiv {
+  margin: auto;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 10px;
+}
+
+.footer {
+  background: var(--colorThree);
+}
+.footer .sectionContainer {
+  max-width: 100%;
+  gap: 2.5rem;
+}
+.footer .sectionContainer .gridOne {
+  gap: 1rem;
+  justify-content: center;
+  margin: auto;
+}
+.footer .sectionContainer .gridOne .logoDiv .Logo {
+  width: 10%;
+}
+.footer .sectionContainer .gridOne .socialIcon {
+  margin-top: 1rem;
+  gap: 1rem;
+}
+.footer .sectionContainer .gridOne .socialIcon .icon {
+  height: 50px;
+  width: 30px;
+  border-radius: 10rem;
+  border: 1px solid var(--borderColor);
+  box-shadow: var(--boxShadow);
+  padding: 0.4rem;
+  color: var(--grayText);
+}
+.footer .sectionContainer .gridOne .socialIcon .icon:hover {
+  background-color: var(--HoverColor);
+  transform: translateY(-7px);
+  transition: var(--transition);
+  border: 1px solid var(--HoverColor);
+  color: var(--whiteColor);
+  border: 2px solid #f60101;
+  box-shadow: 2px 2px 10px rgba(255, 0, 0, 0.5);
+}
+.footer .sectionContainer .footerLinks {
+  display: grid;
+}
+.footer .sectionContainer .footerLinks .linkTitles {
+  color: var(--blackColor);
+  font-weight: 700;
+  display: block;
+  padding-bottom: 1rem;
+}
+.footer .sectionContainer .footerLinks li a {
+  display: block;
+  color: var(--grayText);
+  transition: var(--transition);
+  padding: 0.2rem 0;
+}
+.footer .sectionContainer .footerLinks li a:hover {
+  transform: translateX(7px);
+  color: var(--PrimaryColor);
+  text-decoration: underline;
+  text-decoration-color: #228B22;
+  text-decoration-thickness: 2px;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  transition: transform 0.3s ease;
+  transform-origin: left center;
+}
+.footer .copyRightDiv {
+  background-color: rgb(0, 97, 61);
+  justify-content: center;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-top: 1px solid var(--grayText);
+  text-align: center;
+}
+.footer .copyRightDiv p {
+  color: rgb(255, 255, 255);
+}
+
+.login {
+  max-width: 100%;
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+}
+.login .sectionContainer {
+  display: flex;
+  padding: 3rem;
+  width: 75%;
+  height: 600px;
+  border: 1px solid rgb(247, 89, 9);
+  border-radius: 16px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  row-gap: 2rem;
+}
+.login .sectionContainer .imgLogin {
+  width: 75%;
+  height: 597px;
+}
+.login .sectionContainer .loginInput {
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.login .sectionContainer .loginInput .header-login {
+  text-align: center;
+  font-weight: 700;
+  font-size: 30px;
+  color: rgb(8, 117, 77);
+}
+.login .sectionContainer .loginInput .singleInput {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 480px;
+  height: 65px;
+  background-color: rgb(254, 246, 244);
+  border: 1px solid rgb(249, 197, 180);
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  border-radius: 8px;
+}
+.login .sectionContainer .loginInput .singleInput:hover {
+  color: rgb(244, 134, 100);
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 10px rgba(240, 46, 46, 0.3);
+}
+.login .sectionContainer .loginInput .singleInput .iconDiv {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.login .sectionContainer .loginInput .singleInput input {
+  width: 400px;
+  background-color: rgb(254, 246, 244);
+  caret-color: red;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+}
+.login .sectionContainer .loginInput .singleInput .password-toggle-icon {
+  margin-left: -5px;
+  color: rgb(156, 163, 175);
+}
+.login .sectionContainer .loginInput .btnSubmit {
+  justify-content: center;
+  flex-direction: row;
+}
+.login .sectionContainer .loginInput .btnSubmit .btns {
+  display: flex;
+  justify-content: center;
+  width: 240px;
+  color: rgb(239, 82, 34);
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  border-bottom: 2px solid rgb(239, 82, 34);
+}
+.login .sectionContainer .loginInput .btnSend {
+  justify-content: center;
+  flex-direction: row;
+  gap: 5rem;
+}
+.login .sectionContainer .loginInput .btnSend .btn {
+  width: 300px;
+  justify-content: center;
+}
+.login .sectionContainer .loginInput .btnSubmitLogin {
+  justify-content: center;
+  flex-direction: row;
+}
+.login .sectionContainer .loginInput .btnSubmitLogin .btn {
+  width: 300px;
+  justify-content: center;
+}
+.login .sectionContainer .loginInput .btnSubmitRegister {
+  justify-content: center;
+  flex-direction: row;
+}
+.login .sectionContainer .loginInput .btnSubmitRegister .btn {
+  width: 300px;
+  justify-content: center;
+}
+.login .sectionContainer .loginInput .forgot-password {
+  text-decoration: underline;
+  color: rgb(255, 77, 79);
+  margin-right: 365px;
+}
+.login .sectionContainer .loginInput .forgot-password:hover {
+  color: #f20707;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+  transform: translatex(-15px);
+}
+.login .sectionContainer .loginInput .register {
+  text-decoration: underline;
+  color: rgb(255, 77, 79);
+  margin-left: 180px;
+  margin-top: -50px;
+}
+.login .sectionContainer .loginInput .register:hover {
+  color: #f20707;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+  transform: translatex(15px);
+}
+.login .sectionContainer .loginInput .return {
+  text-decoration: underline;
+  color: rgb(255, 77, 79);
+  margin-right: 365px;
+}
+.login .sectionContainer .loginInput .return:hover {
+  color: #f20707;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+  transform: translatex(15px);
+}
+
+.category .leftColumn {
+  padding: 2rem;
+  border: 1px solid rgb(247, 89, 9);
+  border-radius: 16px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  row-gap: 2rem;
+  width: 300px;
+  height: 600px;
+}
+.category .leftColumn .card {
+  gap: 3rem;
+  margin-top: -120px;
+}
+.category .leftColumn .card .headerMenu {
+  justify-content: center;
+  font-weight: 600;
+  font-size: 25px;
+  color: rgb(8, 117, 77);
+}
+.category .leftColumn .card aside .leftMenu {
+  display: grid;
+  gap: 2rem;
+}
+.category .leftColumn .card aside .leftMenu .single {
+  gap: 1rem;
+  border-bottom: 2px solid #b1afaf;
+  border-radius: 1px;
+  width: 250px;
+  height: 50px;
+}
+.category .leftColumn .card aside .leftMenu .single a {
+  font-weight: 500;
+}
+.category .leftColumn .card aside .leftMenu .single:hover {
+  border-bottom: 2px solid #fe0e0e;
+}
+.category .leftColumn .card aside .leftMenu .single:hover a {
+  color: #f20707;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+  transform: translatex(30px);
+}
+
+.account {
+  max-width: 100%;
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+  display: grid;
+  justify-content: center;
+}
+.account .sectionContainer {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+}
+.account .sectionContainer .rightContent {
+  padding: 10rem;
+  border: 1px solid rgb(247, 89, 9);
+  border-radius: 16px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  width: 900px;
+  height: 600px;
+  justify-content: center;
+}
+.account .sectionContainer .rightContent .headerInformation {
+  justify-content: center;
+  font-weight: 600;
+  font-size: 25px;
+  color: rgb(8, 117, 77);
+  margin-top: -200px;
+}
+.account .sectionContainer .rightContent .contentInformation {
+  width: 600px;
+  gap: 8rem;
+}
+.account .sectionContainer .rightContent .contentInformation .accountImport {
+  gap: 5rem;
+}
+.account .sectionContainer .rightContent .contentInformation .accountImport .view {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  border: 1px solid rgb(145, 145, 145);
+  border-radius: 10rem;
+  margin-left: -50px;
+}
+.account .sectionContainer .rightContent .contentInformation .accountImport .view img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.account .sectionContainer .rightContent .contentInformation .accountImport .view #imagePreview {
+  max-width: 200px;
+  max-height: 200px;
+  position: absolute;
+}
+.account .sectionContainer .rightContent .contentInformation .accountImport .view .userImg {
+  width: 200px;
+  height: 200px;
+  border-radius: 10rem;
+}
+.account .sectionContainer .rightContent .contentInformation .accountImport .import {
+  display: flex;
+  justify-items: center;
+}
+.account .sectionContainer .rightContent .contentInformation .accountImport .import input {
+  display: none;
+}
+.account .sectionContainer .rightContent .contentInformation .accountImport .import .btn {
+  width: 120px;
+  height: 35px;
+  font-size: 15px;
+  margin-bottom: -50px;
+  margin-left: -10px;
+  background-color: var(--borderColor);
+}
+.account .sectionContainer .rightContent .contentInformation .accountInformation {
+  gap: 2rem;
+}
+.account .sectionContainer .rightContent .contentInformation .accountInformation div input {
+  width: 200px;
+  caret-color: red;
+  outline: none;
+}
+.account .sectionContainer .rightContent .contentInformation .accountInformation .update {
+  margin-bottom: -100px;
+  gap: 3rem;
+}
+.account .sectionContainer .rightContent .contentInformation .accountInformation .update .btn {
+  justify-content: center;
+  width: 130px;
+  height: 40px;
+}
+
+.resetPassword {
+  max-width: 100%;
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+  display: grid;
+}
+.resetPassword .sectionContainer {
+  display: flex;
+  justify-self: center;
+  gap: 6em;
+}
+.resetPassword .sectionContainer .contentReset {
+  display: grid;
+  justify-items: center;
+  border: 1px solid rgb(247, 89, 9);
+  border-radius: 16px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  width: 900px;
+  height: 600px;
+}
+.resetPassword .sectionContainer .contentReset .headerReset {
+  justify-content: center;
+  font-weight: 600;
+  font-size: 25px;
+  color: rgb(8, 117, 77);
+}
+.resetPassword .sectionContainer .contentReset .resetInput {
+  justify-items: center;
+  width: 900px;
+  height: 400px;
+  gap: 2rem;
+  margin-top: -50px;
+}
+.resetPassword .sectionContainer .contentReset .resetInput .singleInput .iconDiv {
+  padding: 16px 10px;
+  border-radius: 3rem;
+  background: var(--SecondaryColor);
+  margin-right: 1rem;
+  margin-top: -60px;
+}
+.resetPassword .sectionContainer .contentReset .resetInput .singleInput .iconDiv .icon {
+  color: var(--blackColor);
+  opacity: 0.7;
+}
+.resetPassword .sectionContainer .contentReset .resetInput .singleInput .texts h4 {
+  padding-top: 0;
+  padding-bottom: 0.7rem;
+  color: var(--blackColor);
+  font-weight: 700;
+}
+.resetPassword .sectionContainer .contentReset .resetInput .singleInput .texts input {
+  width: 300px;
+  border: 1px solid #ccc;
+  caret-color: red;
+  padding: 0.5rem;
+  border-radius: 10px;
+  margin-left: -50px;
+}
+.resetPassword .sectionContainer .contentReset .resetInput .singleInput .texts input::-moz-placeholder {
+  opacity: 0.5;
+}
+.resetPassword .sectionContainer .contentReset .resetInput .singleInput .texts input::placeholder {
+  opacity: 0.5;
+}
+.resetPassword .sectionContainer .contentReset .resetInput .singleInput .texts input[type=text]:hover {
+  border: 1px solid;
+  border-color: rgb(7, 124, 46);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+.resetPassword .sectionContainer .contentReset .resetInput .singleInput .texts .password-toggle-icon {
+  position: absolute;
+  margin-top: 13px;
+  margin-left: -30px;
+}
+.resetPassword .sectionContainer .contentReset .resetInput .confirm-cancel {
+  gap: 3rem;
+}
+
+.logout {
+  max-width: 100%;
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+  display: grid;
+  justify-content: center;
+}
+.logout .sectionContainer {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+}
+.logout .sectionContainer .notification {
+  display: grid;
+  justify-items: center;
+  width: 900px;
+  height: 600px;
+}
+.logout .sectionContainer .notification .rightLogout {
+  justify-items: center;
+  width: 900px;
+  height: 300px;
+  gap: 1rem;
+  padding: 4rem;
+  border: 1px solid rgb(247, 89, 9);
+  border-radius: 16px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+.logout .sectionContainer .notification .rightLogout .headerLogout {
+  font-size: 20px;
+  margin-top: 10px;
+}
+.logout .sectionContainer .notification .rightLogout .confirm-cancel {
+  gap: 3rem;
+}
+.logout .sectionContainer .notification .rightLogout .confirm-cancel .btnCancel .btn {
+  background-color: var(--borderColor);
+}
+
+.historyTicket {
+  max-width: 100%;
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+  display: grid;
+}
+.historyTicket .sectionContainer {
+  display: flex;
+  justify-self: center;
+  gap: 6em;
+}
+.historyTicket .sectionContainer .ticketHistoryPage {
+  display: grid;
+  border: 1px solid rgb(247, 89, 9);
+  border-radius: 16px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  width: 900px;
+  height: 600px;
+  padding: 15px;
+  gap: 15px;
+}
+.historyTicket .sectionContainer .ticketHistoryPage .headerHistoryTicket {
+  justify-content: start;
+}
+.historyTicket .sectionContainer .ticketHistoryPage .headerHistoryTicket .headerHistory h1 {
+  font-weight: 600;
+  color: rgb(8, 117, 77);
+}
+.historyTicket .sectionContainer .ticketHistoryPage .headerHistoryTicket .headerHistory p {
+  margin-top: -10px;
+}
+.historyTicket .sectionContainer .ticketHistoryPage .headerHistoryTicket .btnBooking {
+  margin-left: 460px;
+}
+.historyTicket .sectionContainer .ticketHistoryPage .headerHistoryTicket .btnBooking .btn {
+  height: 40px;
+  background-color: rgb(242, 117, 78);
+  border: 1px solid rgb(239, 82, 34);
+}
+.historyTicket .sectionContainer .ticketHistoryPage .sectionContainerSearchTicketCode {
+  display: flex;
+  justify-content: center;
+}
+.historyTicket .sectionContainer .ticketHistoryPage .sectionContainerSearchTicketCode .searchContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: rgb(254, 246, 244);
+  width: 280px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgb(249, 197, 180);
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  padding: 5px;
+}
+.historyTicket .sectionContainer .ticketHistoryPage .sectionContainerSearchTicketCode .searchContainer:hover {
+  color: rgb(244, 134, 100);
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 10px rgba(240, 46, 46, 0.3);
+}
+.historyTicket .sectionContainer .ticketHistoryPage .sectionContainerSearchTicketCode .searchContainer input {
+  background-color: rgb(254, 246, 244);
+  caret-color: red;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+}
+.historyTicket .sectionContainer .ticketHistoryPage .sectionContainerSearchTicketCode .searchContainer input::-moz-placeholder {
+  opacity: 0.5;
+  font-size: 14px;
+  color: #000000;
+}
+.historyTicket .sectionContainer .ticketHistoryPage .sectionContainerSearchTicketCode .searchContainer input::placeholder {
+  opacity: 0.5;
+  font-size: 14px;
+  color: #000000;
+}
+.historyTicket .sectionContainer .ticketHistoryPage .ticketTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+.historyTicket .sectionContainer .ticketHistoryPage .ticketTable th,
+.historyTicket .sectionContainer .ticketHistoryPage .ticketTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.historyTicket .sectionContainer .ticketHistoryPage .ticketTable th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+.historyTicket .sectionContainer .ticketHistoryPage .ticketTable tr:nth-child(odd) {
+  background-color: rgb(255, 255, 255);
+}
+.historyTicket .sectionContainer .ticketHistoryPage .ticketTable tr:nth-child(even) {
+  background-color: rgb(247, 238, 235);
+}
+.historyTicket .sectionContainer .ticketHistoryPage .pagination {
+  display: flex;
+  justify-content: right;
+}
+.historyTicket .sectionContainer .ticketHistoryPage .pagination span {
+  margin-right: 10px;
+}
+.historyTicket .sectionContainer .ticketHistoryPage .pagination .number {
+  display: flex;
+  justify-content: center;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 20px;
+  height: 20px;
+}
+.historyTicket .sectionContainer .ticketHistoryPage .pagination .number button {
+  font-size: 12px;
+}
+.historyTicket .sectionContainer .ticketHistoryPage .pagination .number button.active {
+  background-color: rgb(225, 36, 36);
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+}
+.historyTicket .sectionContainer .ticketHistoryPage .pagination .leftRight {
+  display: flex;
+  justify-content: center;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 30px;
+  height: 20px;
+}
+.historyTicket .sectionContainer .ticketHistoryPage .pagination .leftRight:disabled {
+  cursor: not-allowed;
+  opacity: 0.2;
+}
+
+.searchSchedule {
+  max-width: 100%;
+  margin-top: 30px;
+}
+.searchSchedule .sectionContainer {
+  display: grid;
+  justify-content: center;
+}
+.searchSchedule .sectionContainer .searchInput {
+  gap: 3rem;
+}
+.searchSchedule .sectionContainer .searchInput .singleInput {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 600px;
+  height: 60px;
+  background-color: rgb(254, 246, 244);
+  border: 1px solid rgb(249, 197, 180);
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  border-radius: 35px;
+}
+.searchSchedule .sectionContainer .searchInput .singleInput:hover {
+  color: rgb(244, 134, 100);
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 10px rgba(240, 46, 46, 0.3);
+}
+.searchSchedule .sectionContainer .searchInput .singleInput .iconDiv {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.searchSchedule .sectionContainer .searchInput .singleInput input {
+  width: 400px;
+  background-color: rgb(254, 246, 244);
+  caret-color: red;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+}
+.searchSchedule .sectionContainer .imgDiv {
+  display: flex;
+  justify-content: center;
+}
+.searchSchedule .sectionContainer .imgDiv .imgS {
+  width: 90px;
+  height: auto;
+  margin-top: -75px;
+}
+.searchSchedule .sectionContainer .imgDiv:hover {
+  transition: transform 0.5s;
+  transform: rotateY(180deg);
+}
+
+.titleSchedule {
+  max-width: 100%;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.titleSchedule .sectionContainer {
+  display: flex;
+  width: 1250px;
+  height: 70px;
+  background-color: rgb(254, 246, 244);
+  border: 1px solid rgb(249, 197, 180);
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  border-radius: 15px;
+  padding: 10px;
+  gap: 7rem;
+}
+.titleSchedule .sectionContainer .tuyenXe {
+  margin-right: 100px;
+  font-weight: 600;
+}
+.titleSchedule .sectionContainer .loaiXe {
+  font-weight: 600;
+}
+.titleSchedule .sectionContainer .quangDuong {
+  font-weight: 600;
+}
+.titleSchedule .sectionContainer .thoiGian {
+  font-weight: 600;
+}
+.titleSchedule .sectionContainer .giaVe {
+  font-weight: 600;
+}
+
+.schedule {
+  max-width: 100%;
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+  display: flex;
+  justify-content: center;
+}
+.schedule .sectionContainer {
+  gap: 1rem;
+}
+.schedule .sectionContainer .searchSchedule {
+  display: grid;
+  justify-content: center;
+}
+.schedule .sectionContainer .searchSchedule .searchInput {
+  gap: 3rem;
+}
+.schedule .sectionContainer .searchSchedule .searchInput .singleInput {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 600px;
+  height: 60px;
+  background-color: rgb(254, 246, 244);
+  border: 1px solid rgb(249, 197, 180);
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  border-radius: 35px;
+}
+.schedule .sectionContainer .searchSchedule .searchInput .singleInput:hover {
+  color: rgb(244, 134, 100);
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 10px rgba(240, 46, 46, 0.3);
+}
+.schedule .sectionContainer .searchSchedule .searchInput .singleInput .iconDiv {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.schedule .sectionContainer .searchSchedule .searchInput .singleInput input {
+  width: 400px;
+  background-color: rgb(254, 246, 244);
+  caret-color: red;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+}
+.schedule .sectionContainer .searchSchedule .imgDiv {
+  display: flex;
+  justify-content: center;
+}
+.schedule .sectionContainer .searchSchedule .imgDiv .imgS {
+  width: 90px;
+  height: auto;
+  margin-top: -75px;
+}
+.schedule .sectionContainer .searchSchedule .imgDiv:hover {
+  transition: transform 0.5s;
+  transform: rotateY(180deg);
+}
+.schedule .sectionContainer .titleSchedule {
+  display: flex;
+  width: 1250px;
+  height: 70px;
+  background-color: rgb(254, 246, 244);
+  border: 1px solid rgb(249, 197, 180);
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  border-radius: 15px;
+  padding: 10px;
+  justify-content: left;
+}
+.schedule .sectionContainer .titleSchedule .tuyenXe {
+  font-weight: 600;
+  position: absolute;
+}
+.schedule .sectionContainer .titleSchedule .loaiXe {
+  font-weight: 600;
+  position: absolute;
+  margin-left: 280px;
+}
+.schedule .sectionContainer .titleSchedule .quangDuong {
+  font-weight: 600;
+  position: absolute;
+  margin-left: 450px;
+}
+.schedule .sectionContainer .titleSchedule .thoiGian {
+  font-weight: 600;
+  position: absolute;
+  margin-left: 670px;
+}
+.schedule .sectionContainer .titleSchedule .giaVe {
+  font-weight: 600;
+  position: absolute;
+  margin-left: 935px;
+}
+.schedule .sectionContainer .singleTinh {
+  display: flex;
+  width: 1250px;
+  height: 70px;
+  background-color: rgb(254, 246, 244);
+  border: 1px solid rgb(249, 197, 180);
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  border-radius: 15px;
+  padding: 10px;
+}
+.schedule .sectionContainer .singleTinh .singleTuyenXe {
+  font-weight: 500;
+  position: absolute;
+}
+.schedule .sectionContainer .singleTinh .singleLoaiXe {
+  position: absolute;
+  margin-left: 280px;
+  font-weight: 500;
+}
+.schedule .sectionContainer .singleTinh .singleQuangDuong {
+  position: absolute;
+  margin-left: 450px;
+  font-weight: 500;
+}
+.schedule .sectionContainer .singleTinh .singleThoiGian {
+  position: absolute;
+  margin-left: 670px;
+  font-weight: 500;
+}
+.schedule .sectionContainer .singleTinh .singleGiaVe {
+  position: absolute;
+  margin-left: 935px;
+  font-weight: 500;
+}
+.schedule .sectionContainer .singleTinh .btnSearch {
+  position: absolute;
+  margin-left: 1080px;
+}
+.schedule .sectionContainer .singleTinh .btnSearch .btn {
+  height: 40px;
+}
+
+.indexBookTicket {
+  display: grid;
+  justify-items: center;
+}
+.indexBookTicket .imgDiv {
+  display: flex;
+  justify-content: center;
+}
+.indexBookTicket .imgDiv .imgS {
+  width: 1400px;
+  height: 350px;
+  border-radius: 30px 30px 0px 0px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: -50px;
+  margin-top: -40px;
+}
+.indexBookTicket .sectionContainerTicket {
+  margin-top: 30px;
+  gap: 30px;
+  display: flex;
+}
+.indexBookTicket .sectionContainerTicket .left {
+  margin-left: 15px;
+  gap: 1rem;
+  position: sticky;
+  top: 180px;
+  z-index: 999;
+  align-self: flex-start;
+}
+.indexBookTicket .sectionContainerTicket .right {
+  margin-left: 10px;
+}
+.indexBookTicket .sectionContainerTicket .right .header {
+  margin-left: 20px;
+}
+
+.filter {
+  width: 310px;
+  height: auto;
+}
+.filter .sectionContainerFilter {
+  padding: 1rem;
+  border: 1px solid rgb(247, 89, 9);
+  border-radius: 16px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  row-gap: 2rem;
+  background-color: rgb(255, 255, 255);
+}
+.filter .sectionContainerFilter .header-filter {
+  gap: 3.5rem;
+}
+.filter .sectionContainerFilter .header-filter .header h2 {
+  color: var(--title);
+  font-weight: 600;
+}
+.filter .sectionContainerFilter .header-filter .nonFilter button {
+  color: rgb(255, 0, 0);
+}
+.filter .sectionContainerFilter .timeFilter {
+  gap: 1rem;
+}
+.filter .sectionContainerFilter .timeFilter .filterInput {
+  gap: 8px;
+}
+.filter .sectionContainerFilter .timeFilter .filterInput .singleInput {
+  gap: 8px;
+}
+.filter .sectionContainerFilter .timeFilter .filterInput .singleInput input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+}
+.filter .sectionContainerFilter .timeFilter .filterInput .singleInput input[type=checkbox]:hover {
+  border: 3px solid;
+  border-color: rgb(7, 124, 46);
+  box-shadow: 0 0 8px rgba(203, 63, 63, 0.3);
+}
+.filter .sectionContainerFilter .timeFilter .filterInput .singleInput input[type=checkbox]:checked::after {
+  background-color: rgb(242, 117, 78);
+}
+.filter .sectionContainerFilter .divide {
+  width: 308px;
+  height: 2px;
+  background-color: var(--borderColor);
+  margin-left: -16px;
+}
+.filter .sectionContainerFilter .typeBus {
+  gap: 1rem;
+}
+.filter .sectionContainerFilter .typeBus .singleBtn {
+  gap: 2rem;
+}
+.filter .sectionContainerFilter .typeBus .singleBtn button {
+  padding: 5px;
+  border: 1px solid rgb(159, 159, 159);
+  border-radius: 10px;
+}
+.filter .sectionContainerFilter .floor {
+  gap: 1rem;
+}
+.filter .sectionContainerFilter .floor .singleBtn {
+  gap: 2rem;
+}
+.filter .sectionContainerFilter .floor .singleBtn button {
+  padding: 5px;
+  border: 1px solid rgb(159, 159, 159);
+  border-radius: 10px;
+}
+
+.ticket {
+  display: grid;
+  gap: 2rem;
+}
+.ticket .sectionContainer {
+  padding: 10px;
+  gap: 6px;
+  padding-left: 20px;
+  border: 1px solid rgb(155, 155, 154);
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 1035px;
+  height: auto;
+}
+.ticket .sectionContainer .contentTicket {
+  gap: 2rem;
+}
+.ticket .sectionContainer .contentTicket .detail .time-destination {
+  gap: 1rem;
+  width: 650px;
+}
+.ticket .sectionContainer .contentTicket .detail .time-destination .time {
+  gap: 1rem;
+}
+.ticket .sectionContainer .contentTicket .detail .time-destination .time span {
+  font-size: 20px;
+}
+.ticket .sectionContainer .contentTicket .detail .time-destination .time .go {
+  gap: 10px;
+}
+.ticket .sectionContainer .contentTicket .detail .time-destination .time .go .dottedLine {
+  width: 180px;
+  border: 1px dashed rgb(155, 155, 154);
+}
+.ticket .sectionContainer .contentTicket .detail .time-destination .time .go .giodi {
+  font-size: 16px;
+  color: rgb(137, 138, 138);
+}
+.ticket .sectionContainer .contentTicket .detail .time-destination .destination {
+  margin-top: 5px;
+}
+.ticket .sectionContainer .contentTicket .detail .time-destination .destination .desA {
+  position: absolute;
+}
+.ticket .sectionContainer .contentTicket .detail .time-destination .destination .desB {
+  position: absolute;
+  margin-left: 500px;
+}
+.ticket .sectionContainer .contentTicket .detail .moneyContainer {
+  gap: 2rem;
+  justify-items: right;
+  position: absolute;
+  margin-left: 750px;
+  margin-top: 30px;
+}
+.ticket .sectionContainer .contentTicket .detail .moneyContainer .type {
+  gap: 2rem;
+}
+.ticket .sectionContainer .contentTicket .detail .moneyContainer .money {
+  color: rgb(225, 36, 36);
+  font-size: 20px;
+}
+.ticket .sectionContainer .contentTicket .note {
+  width: 600px;
+}
+.ticket .sectionContainer .divide {
+  width: 1000px;
+  height: 2px;
+  background-color: var(--borderColor);
+  margin-left: 2px;
+}
+.ticket .sectionContainer .navbar {
+  gap: 22rem;
+}
+.ticket .sectionContainer .navbar .singleBtn {
+  gap: 5rem;
+}
+.ticket .sectionContainer .navbar .singleBtn .btn {
+  width: 150px;
+  height: 40px;
+  justify-content: center;
+}
+.ticket .sectionContainer .navbar .singleBtn .btnNav {
+  border-bottom: 2px solid rgb(201, 201, 201);
+  width: 100px;
+}
+.ticket .sectionContainer .navbar .singleBtn .btnNav:hover {
+  color: rgb(242, 117, 78);
+  font-weight: 500;
+  border-bottom: 2px solid rgb(242, 117, 78);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.chair-bed {
+  border: 1px solid rgb(204, 198, 198);
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #696969;
+  border-radius: 7px;
+}
+
+.pageBed {
+  width: 1000px;
+  height: auto;
+}
+.pageBed .sectionBed {
+  justify-items: center;
+  padding: 10px;
+  gap: 2rem;
+}
+.pageBed .sectionBed .explain {
+  gap: 5rem;
+}
+.pageBed .sectionBed .explain .singleExplain {
+  gap: 5px;
+}
+.pageBed .sectionBed .explain .singleExplain span {
+  font-size: 15px;
+}
+.pageBed .sectionBed .bedInput {
+  display: flex;
+  justify-content: center;
+}
+.pageBed .sectionBed .bedInput .bedType_AB {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  width: 400px;
+  height: auto;
+}
+.pageBed .sectionBed .bedInput .bedType_AB .titleBed {
+  gap: 11rem;
+}
+.pageBed .sectionBed .bedInput .bedType_AB .titleBed .headerBed h2 {
+  font-size: 15px;
+}
+.pageBed .sectionBed .bedInput .bedType_AB .bedContainer {
+  gap: 3rem;
+  display: flex;
+  justify-content: center;
+}
+.pageBed .sectionBed .bedInput .bedType_AB .bedContainer .bed-A {
+  max-width: 250px;
+  gap: 15px;
+  display: grid;
+}
+.pageBed .sectionBed .bedInput .bedType_AB .bedContainer .bed-A .row_0 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  row-gap: 15px;
+}
+.pageBed .sectionBed .bedInput .bedType_AB .bedContainer .bed-A .row_0 button {
+  border: 1px solid rgb(204, 198, 198);
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #696969;
+  border-radius: 7px;
+  background-color: rgb(222, 243, 255);
+}
+.pageBed .sectionBed .bedInput .bedType_AB .bedContainer .bed-A .row_1 {
+  gap: 130px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.pageBed .sectionBed .bedInput .bedType_AB .bedContainer .bed-A .row_1 button {
+  border: 1px solid rgb(204, 198, 198);
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #696969;
+  border-radius: 7px;
+  background-color: rgb(222, 243, 255);
+}
+.pageBed .sectionBed .bedInput .bedType_AB .bedContainer .bed-A .row_2 {
+  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+}
+.pageBed .sectionBed .bedInput .bedType_AB .bedContainer .bed-A .row_2 button {
+  border: 1px solid rgb(204, 198, 198);
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #696969;
+  border-radius: 7px;
+  background-color: rgb(222, 243, 255);
+}
+.pageBed .sectionBed .bedInput .bedType_AB .bedContainer .bed-B {
+  max-width: 250px;
+  gap: 15px;
+  display: grid;
+}
+.pageBed .sectionBed .bedInput .bedType_AB .bedContainer .bed-B .row_0 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  row-gap: 15px;
+}
+.pageBed .sectionBed .bedInput .bedType_AB .bedContainer .bed-B .row_0 button {
+  border: 1px solid rgb(204, 198, 198);
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #696969;
+  border-radius: 7px;
+  background-color: rgb(222, 243, 255);
+}
+.pageBed .sectionBed .bedInput .bedType_AB .bedContainer .bed-B .row_1 {
+  gap: 130px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.pageBed .sectionBed .bedInput .bedType_AB .bedContainer .bed-B .row_1 button {
+  border: 1px solid rgb(204, 198, 198);
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #696969;
+  border-radius: 7px;
+  background-color: rgb(222, 243, 255);
+}
+.pageBed .sectionBed .bedInput .bedType_AB .bedContainer .bed-B .row_2 {
+  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+}
+.pageBed .sectionBed .bedInput .bedType_AB .bedContainer .bed-B .row_2 button {
+  border: 1px solid rgb(204, 198, 198);
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #696969;
+  border-radius: 7px;
+  background-color: rgb(222, 243, 255);
+}
+.pageBed .sectionBed .chairInput .chairTypeNumber {
+  justify-items: center;
+  gap: 1rem;
+  width: 250px;
+  height: auto;
+}
+.pageBed .sectionBed .chairInput .chairTypeNumber .headerChair {
+  font-size: 15px;
+}
+.pageBed .sectionBed .chairInput .chairTypeNumber .chair-number {
+  gap: 3rem;
+}
+.pageBed .sectionBed .chairInput .chairTypeNumber .chair-number .chairNumber_left {
+  max-width: 200px;
+  gap: 10px;
+  display: grid;
+  justify-items: center;
+}
+.pageBed .sectionBed .chairInput .chairTypeNumber .chair-number .chairNumber_left .row {
+  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.pageBed .sectionBed .chairInput .chairTypeNumber .chair-number .chairNumber_left .row button {
+  border: 1px solid rgb(204, 198, 198);
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #696969;
+  border-radius: 7px;
+  background-color: rgb(222, 243, 255);
+}
+.pageBed .sectionBed .chairInput .chairTypeNumber .chair-number .chairNumber_right {
+  max-width: 200px;
+  gap: 10px;
+  display: grid;
+  justify-items: center;
+}
+.pageBed .sectionBed .chairInput .chairTypeNumber .chair-number .chairNumber_right .row {
+  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.pageBed .sectionBed .chairInput .chairTypeNumber .chair-number .chairNumber_right .row button {
+  border: 1px solid rgb(204, 198, 198);
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #696969;
+  border-radius: 7px;
+  background-color: rgb(222, 243, 255);
+}
+.pageBed .sectionBed .number-moneyTicket {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.pageBed .sectionBed .number-moneyTicket .ticketNumber {
+  position: absolute;
+  margin-left: -480px;
+}
+.pageBed .sectionBed .number-moneyTicket .total-amount {
+  margin-left: 250px;
+  position: absolute;
+}
+.pageBed .sectionBed .number-moneyTicket .singleBtn {
+  position: absolute;
+  margin-left: 400px;
+}
+.pageBed .sectionBed .number-moneyTicket .singleBtn .btn {
+  justify-content: center;
+  height: 35px;
+}
+
+.transshipment {
+  padding: 10px;
+  background-color: rgb(245, 245, 245);
+  border-radius: 10px;
+}
+.transshipment .header {
+  font-weight: 600;
+}
+.transshipment .content {
+  padding: 20px;
+  background-color: rgb(245, 245, 245);
+}
+.transshipment .content p {
+  color: #393737;
+  font-size: 16px;
+}
+
+.policy .sectionContainerPolicy {
+  max-height: 435px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+}
+.policy .sectionContainerPolicy .singlePolicy {
+  background-color: rgb(245, 245, 245);
+  padding: 10px;
+  border-radius: 10px;
+}
+.policy .sectionContainerPolicy .singlePolicy .header {
+  font-size: 20px;
+}
+.policy .sectionContainerPolicy .singlePolicy .contentPolicy {
+  padding: 0px 0px 0px 20px;
+}
+.policy .sectionContainerPolicy .singlePolicy .contentPolicy ul li {
+  list-style-type: circle;
+}
+
+.informationTicket {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(252, 252, 252);
+}
+.informationTicket .sectionContainerInfo {
+  gap: 2rem;
+}
+.informationTicket .sectionContainerInfo .leftContainer {
+  gap: 10px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .chooseChair {
+  position: relative;
+  gap: 3rem;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  width: 760px;
+  height: 620px;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 0 0 5px rgba(100, 100, 100, 0.3);
+}
+.informationTicket .sectionContainerInfo .leftContainer .chooseChair .headerChooseChair {
+  font-size: 22px;
+  font-weight: 600;
+  color: rgb(8, 117, 77);
+  margin-left: 10px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .chooseChair .explain {
+  justify-content: center;
+  gap: 5rem;
+}
+.informationTicket .sectionContainerInfo .leftContainer .chooseChair .explain .singleExplain {
+  gap: 5px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .chooseChair .explain .singleExplain span {
+  font-size: 15px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .chooseChair .chooseChair-Bed {
+  justify-content: center;
+  gap: 2rem;
+}
+.informationTicket .sectionContainerInfo .leftContainer .chooseChair .chooseChair-Bed .chooseChair-Bed_Type-A {
+  row-gap: 15px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .chooseChair .chooseChair-Bed .chooseChair-Bed_Type-A .chooseChair-Bed_1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  row-gap: 15px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .chooseChair .chooseChair-Bed .chooseChair-Bed_Type-A .chooseChair-Bed_2 {
+  gap: 130px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.informationTicket .sectionContainerInfo .leftContainer .chooseChair .chooseChair-Bed .chooseChair-Bed_Type-A .chooseChair-Bed_3 {
+  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+}
+.informationTicket .sectionContainerInfo .leftContainer .chooseChair .chooseChair-Bed .chooseChair-Bed_Type-B {
+  row-gap: 15px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .chooseChair .chooseChair-Bed .chooseChair-Bed_Type-B .chooseChair-Bed_1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  row-gap: 15px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .chooseChair .chooseChair-Bed .chooseChair-Bed_Type-B .chooseChair-Bed_2 {
+  gap: 130px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.informationTicket .sectionContainerInfo .leftContainer .chooseChair .chooseChair-Bed .chooseChair-Bed_Type-B .chooseChair-Bed_3 {
+  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+}
+.informationTicket .sectionContainerInfo .leftContainer .chooseChair .chooseChaiNumber {
+  justify-content: center;
+  gap: 2rem;
+}
+.informationTicket .sectionContainerInfo .leftContainer .chooseChair .chooseChaiNumber .chooseChair-Type-A .chooseChair_1 {
+  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.informationTicket .sectionContainerInfo .leftContainer .chooseChair .chooseChaiNumber .chooseChair_Type-B .chooseChair_1 {
+  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.informationTicket .sectionContainerInfo .leftContainer .chooseChair .selectSeat .codeChair {
+  color: #000000;
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationUser {
+  position: relative;
+  gap: 3rem;
+  background-color: rgb(255, 255, 255);
+  width: 760px;
+  height: 360px;
+  justify-content: center;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 1px;
+  box-shadow: 0 0 5px rgba(100, 100, 100, 0.3);
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationUser .leftInformation {
+  row-gap: 1rem;
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationUser .leftInformation .headerInfoUser {
+  font-size: 22px;
+  font-weight: 600;
+  color: rgb(8, 117, 77);
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationUser .leftInformation .singleInformationInput .titleInput {
+  font-weight: 500;
+  margin-bottom: -10px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationUser .leftInformation .singleInformationInput .inputInfoUser {
+  outline: 1px solid rgb(249, 197, 180);
+  border-radius: 5px;
+  width: 300px;
+  height: 35px;
+  padding: 5px;
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  caret-color: red;
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationUser .leftInformation .singleInformationInput .inputInfoUser:hover {
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 10px rgba(240, 46, 46, 0.3);
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationUser .leftInformation .singleInformationInput .inputInfoUser::-moz-placeholder {
+  font-size: 12px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationUser .leftInformation .singleInformationInput .inputInfoUser::placeholder {
+  font-size: 12px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationUser .rightInformation {
+  row-gap: 3rem;
+  position: relative;
+  margin-top: -130px;
+  justify-items: center;
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationUser .rightInformation .headerRules {
+  font-size: 18px;
+  color: rgb(225, 36, 36);
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationUser .rightInformation .contentRules {
+  width: 350px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationPick-Drop {
+  position: relative;
+  gap: 3rem;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  width: 760px;
+  height: auto;
+  justify-content: center;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 1px;
+  box-shadow: 0 0 5px rgba(100, 100, 100, 0.3);
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationPick-Drop .headerPick-Drop {
+  gap: 1rem;
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationPick-Drop .headerPick-Drop .headerPD {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(8, 117, 77);
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationPick-Drop .contentPick-Drop {
+  gap: 1rem;
+  margin-top: -50px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationPick-Drop .contentPick-Drop .leftPick h4 {
+  font-weight: 500;
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationPick-Drop .contentPick-Drop .leftPick input {
+  outline: 1px solid rgb(249, 197, 180);
+  border-radius: 5px;
+  width: 330px;
+  height: 35px;
+  padding: 5px;
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  caret-color: red;
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationPick-Drop .contentPick-Drop .leftPick input:hover {
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 10px rgba(240, 46, 46, 0.3);
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationPick-Drop .contentPick-Drop .leftPick input::-moz-placeholder {
+  font-size: 12px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationPick-Drop .contentPick-Drop .leftPick input::placeholder {
+  font-size: 12px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationPick-Drop .contentPick-Drop .leftPick .contentPick {
+  width: 320px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationPick-Drop .contentPick-Drop .line {
+  width: 2px;
+  height: 200px;
+  background-color: var(--borderColor);
+  margin-left: 2px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationPick-Drop .contentPick-Drop .rightDrop {
+  margin-top: -85px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationPick-Drop .contentPick-Drop .rightDrop h4 {
+  font-weight: 500;
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationPick-Drop .contentPick-Drop .rightDrop input {
+  outline: 1px solid rgb(249, 197, 180);
+  border-radius: 5px;
+  width: 330px;
+  height: 35px;
+  padding: 5px;
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  caret-color: red;
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationPick-Drop .contentPick-Drop .rightDrop input:hover {
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 10px rgba(240, 46, 46, 0.3);
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationPick-Drop .contentPick-Drop .rightDrop input::-moz-placeholder {
+  font-size: 12px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .informationPick-Drop .contentPick-Drop .rightDrop input::placeholder {
+  font-size: 12px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .pay {
+  position: relative;
+  gap: 3rem;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  width: 760px;
+  height: 80px;
+  justify-content: center;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 0 0 5px rgba(115, 115, 115, 0.3);
+}
+.informationTicket .sectionContainerInfo .leftContainer .pay .totalMoney {
+  font-size: 21px;
+  position: absolute;
+  margin-left: -500px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .pay .btnSubmitCancel {
+  position: absolute;
+  margin-left: 300px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .pay .btnSubmitCancel .btn {
+  height: 40px;
+  background-color: rgb(235, 236, 237);
+  color: #fe0e0e;
+  border: 1px solid rgb(138, 138, 138);
+}
+.informationTicket .sectionContainerInfo .leftContainer .pay .btnSubmitCancel {
+  position: absolute;
+  margin-left: 250px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .pay .btnSubmitCancel .btn {
+  height: 40px;
+  background-color: rgb(235, 236, 237);
+  color: #fe0e0e;
+  border: 1px solid rgb(138, 138, 138);
+}
+.informationTicket .sectionContainerInfo .leftContainer .pay .btnSubmitPay {
+  position: absolute;
+  margin-left: 550px;
+}
+.informationTicket .sectionContainerInfo .leftContainer .pay .btnSubmitPay .btn {
+  height: 40px;
+  border: 1px solid rgb(202, 18, 18);
+}
+.informationTicket .sectionContainerInfo .rightContainer {
+  margin-top: -1030px;
+}
+.informationTicket .sectionContainerInfo .rightContainer .departureInformation {
+  position: relative;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  width: 450px;
+  height: 330px;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(100, 100, 100, 0.3);
+}
+.informationTicket .sectionContainerInfo .rightContainer .departureInformation .headerInfoDeparture {
+  font-size: 22px;
+  font-weight: 600;
+  color: rgb(8, 117, 77);
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+}
+.informationTicket .sectionContainerInfo .rightContainer .departureInformation .singleInfoDeparture {
+  width: 410px;
+  gap: 1rem;
+}
+.informationTicket .sectionContainerInfo .rightContainer .departureInformation .singleInfoDeparture h4 {
+  font-weight: 500;
+  padding: 0px;
+  color: #727272;
+  display: flex;
+  justify-content: left;
+  font-size: 14px;
+}
+.informationTicket .sectionContainerInfo .rightContainer .departureInformation .singleInfoDeparture .infoDeparture {
+  justify-content: right;
+  margin-top: -25px;
+  font-size: 15px;
+}
+.informationTicket .sectionContainerInfo .rightContainer .departureInformation .singleInfoDeparture .infoDeparture span {
+  max-width: 310px;
+  justify-content: right;
+}
+
+.yourTrip {
+  width: 310px;
+  height: auto;
+}
+.yourTrip .sectionContainerYourTrip {
+  padding: 1rem;
+  border: 1px solid rgb(247, 89, 9);
+  border-radius: 16px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  background-color: rgb(255, 255, 255);
+  row-gap: 10px;
+}
+.yourTrip .sectionContainerYourTrip .headerYourTrip {
+  font-weight: 600;
+  color: rgb(8, 117, 77);
+}
+.yourTrip .sectionContainerYourTrip .contentYourTrip {
+  row-gap: 5px;
+}
+.yourTrip .sectionContainerYourTrip .contentYourTrip .dateYourTrip {
+  gap: 5px;
+}
+.yourTrip .sectionContainerYourTrip .contentYourTrip .time-destination {
+  gap: 2rem;
+  width: 650px;
+}
+.yourTrip .sectionContainerYourTrip .contentYourTrip .time-destination .time {
+  gap: 1rem;
+}
+.yourTrip .sectionContainerYourTrip .contentYourTrip .time-destination .time span {
+  font-size: 18px;
+}
+.yourTrip .sectionContainerYourTrip .contentYourTrip .time-destination .time .go {
+  gap: 10px;
+}
+.yourTrip .sectionContainerYourTrip .contentYourTrip .time-destination .time .go .dottedLine {
+  width: 20px;
+  border: 1px dashed rgb(155, 155, 154);
+}
+.yourTrip .sectionContainerYourTrip .contentYourTrip .time-destination .time .go .giodi {
+  font-size: 16px;
+  color: rgb(137, 138, 138);
+}
+.yourTrip .sectionContainerYourTrip .contentYourTrip .time-destination .destination {
+  margin-top: 5px;
+}
+.yourTrip .sectionContainerYourTrip .contentYourTrip .time-destination .destination .desA {
+  position: absolute;
+  width: 150px;
+  height: 60px;
+}
+.yourTrip .sectionContainerYourTrip .contentYourTrip .time-destination .destination .desB {
+  position: absolute;
+  margin-left: 150px;
+  width: 140px;
+  height: 60px;
+}
+
+.paymentPage {
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+}
+.paymentPage .paymentContainer {
+  justify-content: center;
+  gap: 2rem;
+}
+.paymentPage .paymentContainer .leftContainer {
+  width: 450px;
+  row-gap: 2rem;
+  margin-top: -400px;
+}
+.paymentPage .paymentContainer .leftContainer h2 {
+  font-weight: 600;
+  font-size: 20px;
+  color: rgb(8, 117, 77);
+}
+.paymentPage .paymentContainer .leftContainer .paymentMethod {
+  gap: 1rem;
+}
+.paymentPage .paymentContainer .leftContainer .paymentMethod input[type=radio]:checked {
+  accent-color: red;
+}
+.paymentPage .paymentContainer .leftContainer .paymentMethod .logoMoMo {
+  gap: 5px;
+}
+.paymentPage .paymentContainer .leftContainer .paymentMethod .logoMoMo img {
+  width: 40px;
+  border-radius: 5px;
+}
+.paymentPage .paymentContainer .centerContainer {
+  justify-items: center;
+}
+.paymentPage .paymentContainer .centerContainer .qrCodeContainer {
+  display: grid;
+  justify-items: center;
+}
+.paymentPage .paymentContainer .centerContainer .qrCodeContainer h3 {
+  font-size: 18px;
+  color: #878787;
+}
+.paymentPage .paymentContainer .centerContainer .qrCodeContainer .totalAmount {
+  font-size: 30px;
+  font-weight: 600;
+  color: rgb(242, 117, 78);
+}
+.paymentPage .paymentContainer .centerContainer .qrCodeContainer .qrContainer {
+  background-color: rgb(241, 241, 241);
+  border-radius: 10px;
+  padding: 10px;
+}
+.paymentPage .paymentContainer .centerContainer .qrCodeContainer .paySubmit {
+  margin-top: 100px;
+}
+.paymentPage .paymentContainer .centerContainer .qrCodeContainer .paySubmit .btn {
+  border: 2px solid rgb(202, 18, 18);
+  height: 40px;
+}
+.paymentPage .paymentContainer .rightContainer {
+  gap: 2rem;
+}
+.paymentPage .paymentContainer .rightContainer .customerInfo {
+  padding: 20px;
+  row-gap: 1rem;
+  background-color: rgb(255, 255, 255);
+  width: 450px;
+  height: auto;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(100, 100, 100, 0.3);
+}
+.paymentPage .paymentContainer .rightContainer .customerInfo h2 {
+  font-weight: 600;
+  font-size: 20px;
+  color: rgb(8, 117, 77);
+}
+.paymentPage .paymentContainer .rightContainer .customerInfo p {
+  font-size: 16px;
+  color: #000000;
+}
+.paymentPage .paymentContainer .rightContainer .tripInfo {
+  row-gap: 1rem;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  width: 450px;
+  height: auto;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(100, 100, 100, 0.3);
+}
+.paymentPage .paymentContainer .rightContainer .tripInfo h2 {
+  font-weight: 600;
+  font-size: 20px;
+  color: rgb(8, 117, 77);
+}
+.paymentPage .paymentContainer .rightContainer .tripInfo p {
+  font-size: 16px;
+  color: #000000;
+}
+
+.success {
+  padding-top: 10rem;
+  padding-bottom: 15rem;
+  display: flex;
+  justify-content: center;
+}
+.success .sectionContainerSuccess .notification {
+  justify-items: center;
+}
+.success .sectionContainerSuccess .notification h1 {
+  color: rgb(8, 117, 77);
+  font-size: 30px;
+  font-weight: 500;
+}
+.success .sectionContainerSuccess .informationTicketContainer {
+  width: 1300px;
+  border: 1px solid rgb(195, 195, 195);
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(66, 66, 66, 0.3);
+  row-gap: 2rem;
+}
+.success .sectionContainerSuccess .informationTicketContainer .headerInfoTicket {
+  background-color: rgb(239, 239, 239);
+  display: flex;
+  justify-content: center;
+  border-radius: 15px 15px 0px 0px;
+  height: 50px;
+}
+.success .sectionContainerSuccess .informationTicketContainer .headerInfoTicket h2 {
+  font-weight: 600;
+}
+.success .sectionContainerSuccess .informationTicketContainer .contentInformation {
+  justify-content: center;
+}
+.success .sectionContainerSuccess .informationTicketContainer .contentInformation .contentInfoTicket {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: left;
+  -moz-column-gap: 10rem;
+       column-gap: 10rem;
+}
+.success .sectionContainerSuccess .informationTicketContainer .contentInformation .contentInfoTicket .c1 h4 {
+  font-size: 15px;
+  margin-left: 25px;
+}
+.success .sectionContainerSuccess .informationTicketContainer .contentInformation .contentInfoTicket .c2 h4 {
+  font-size: 15px;
+  margin-left: 10px;
+}
+.success .sectionContainerSuccess .informationTicketContainer .contentInformation .contentInfoTicket .c3 h4 {
+  font-size: 15px;
+  margin-left: 25px;
+}
+.success .sectionContainerSuccess .informationTicketContainer .contentInformation .contentInfoTicket .c4 h4 {
+  font-size: 15px;
+  margin-left: 13px;
+}
+.success .sectionContainerSuccess .informationTicketContainer .contentInformation .contentInfoTicket .c5 h4 {
+  font-size: 15px;
+  margin-left: 27px;
+  color: rgb(120, 218, 110);
+}
+.success .sectionContainerSuccess .informationTicketContainer .scrollButtonLeft {
+  position: absolute;
+  background-color: rgba(217, 217, 217, 0.8);
+  border: none;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 15px;
+  cursor: pointer;
+  z-index: 1;
+  margin-top: 195px;
+  margin-left: -20px;
+  transform: translateY(-50%);
+}
+.success .sectionContainerSuccess .informationTicketContainer .scrollButtonRight {
+  position: absolute;
+  background-color: rgba(217, 217, 217, 0.8);
+  border: none;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 15px;
+  cursor: pointer;
+  z-index: 1;
+  margin-top: -320px;
+  margin-left: 1285px;
+  transform: translateY(-50%);
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection {
+  display: flex;
+  gap: 1rem;
+  position: relative;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0 30px;
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection .infoTicketContainer {
+  justify-items: center;
+  flex-shrink: 0;
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket {
+  border-top: 1px solid rgb(195, 195, 195);
+  border-left: 1px solid rgb(195, 195, 195);
+  border-right: 1px solid rgb(195, 195, 195);
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 0 5px rgba(66, 66, 66, 0.2);
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .headerBody {
+  justify-content: center;
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .headerBody h4 {
+  font-weight: 600;
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .headerBody .share {
+  background-color: rgb(227, 230, 234);
+  width: 30px;
+  height: 30px;
+  padding-left: 5px;
+  border-radius: 15px;
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .headerBody .download {
+  background-color: rgb(227, 230, 234);
+  width: 30px;
+  height: 30px;
+  padding-left: 7px;
+  border-radius: 15px;
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .qrCode {
+  display: flex;
+  justify-content: center;
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody {
+  display: grid;
+  grid-template-columns: repeat(2, 30% 70%);
+  align-items: center;
+  width: 300px;
+  margin: 10px;
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody .contentLeft {
+  grid-column: 1;
+  text-align: left;
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody .contentLeft .l1 {
+  position: absolute;
+  margin-top: -120px;
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody .contentLeft .l2 {
+  position: absolute;
+  margin-top: -65px;
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody .contentLeft .l3 {
+  position: absolute;
+  margin-top: -32px;
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody .contentLeft .l4 {
+  position: absolute;
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody .contentLeft .l5 {
+  position: absolute;
+  margin-top: 33px;
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody .contentLeft .l6 {
+  position: absolute;
+  margin-top: 65px;
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody .contentLeft .l7 {
+  position: absolute;
+  margin-top: 97px;
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody .contentRight {
+  grid-column: 2;
+  text-align: right;
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody .contentRight p {
+  padding: 5px;
+  color: #000000;
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection .infoTicketContainer .footerInfoTicket {
+  background-color: rgb(247, 247, 247);
+  border-bottom: 1px solid rgb(195, 195, 195);
+  border-left: 1px solid rgb(195, 195, 195);
+  border-right: 1px solid rgb(195, 195, 195);
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 0 0 5px rgba(66, 66, 66, 0.2);
+  width: 322px;
+  padding: 10px;
+}
+.success .sectionContainerSuccess .informationTicketContainer .ticketContainerSection .infoTicketContainer .footerInfoTicket .tb {
+  color: rgb(8, 117, 77);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.success .sectionContainerSuccess .informationTicketContainer .buttonContainer {
+  justify-content: center;
+  gap: 3rem;
+  margin: 20px;
+}
+.success .sectionContainerSuccess .informationTicketContainer .buttonContainer .btn {
+  height: 40px;
+  background-color: rgb(251, 238, 234);
+  color: rgb(242, 117, 78);
+  gap: 5px;
+  border: 1px solid rgb(255, 228, 202);
+}
+
+.contact {
+  max-width: 100%;
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+}
+.contact .sectionContainer {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+}
+.contact .sectionContainer .contactText {
+  gap: 1rem;
+  margin-top: -260px;
+}
+.contact .sectionContainer .contactText .header-contact {
+  font-weight: 600;
+}
+.contact .sectionContainer .contactText .contact-content {
+  display: grid;
+  gap: 1rem;
+  padding-left: 20px;
+}
+.contact .sectionContainer .contactText .contact-content .single-contact-content a:hover {
+  color: rgb(252, 123, 76);
+  text-shadow: 0 0 2px rgba(110, 110, 110, 0.8);
+}
+.contact .sectionContainer .contactInput {
+  padding: 3rem;
+  border: 1px solid rgb(247, 89, 9);
+  border-radius: 16px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  row-gap: 2rem;
+}
+.contact .sectionContainer .contactInput .headerInput {
+  justify-content: center;
+  font-weight: 600;
+  font-size: 25px;
+  color: rgb(8, 117, 77);
+}
+.contact .sectionContainer .contactInput .singleInput {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.contact .sectionContainer .contactInput .singleInput .information {
+  gap: 1rem;
+}
+.contact .sectionContainer .contactInput .singleInput .information input {
+  outline: 1px solid rgb(249, 197, 180);
+  border-radius: 5px;
+  width: 200px;
+  height: 35px;
+  padding: 5px;
+  background-color: rgb(254, 246, 244);
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  caret-color: red;
+}
+.contact .sectionContainer .contactInput .singleInput .information input:hover {
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 10px rgba(240, 46, 46, 0.3);
+}
+.contact .sectionContainer .contactInput .singleInput .information input::-moz-placeholder {
+  font-size: 13px;
+}
+.contact .sectionContainer .contactInput .singleInput .information input::placeholder {
+  font-size: 13px;
+}
+.contact .sectionContainer .contactInput .singleInput .title input {
+  outline: 1px solid rgb(249, 197, 180);
+  border-radius: 5px;
+  width: 632px;
+  height: 35px;
+  padding: 5px;
+  background-color: rgb(254, 246, 244);
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  caret-color: red;
+}
+.contact .sectionContainer .contactInput .singleInput .title input:hover {
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 10px rgba(240, 46, 46, 0.3);
+}
+.contact .sectionContainer .contactInput .singleInput .title input::-moz-placeholder {
+  font-size: 13px;
+}
+.contact .sectionContainer .contactInput .singleInput .title input::placeholder {
+  font-size: 13px;
+}
+.contact .sectionContainer .contactInput .singleInput .content textarea {
+  outline: 1px solid rgb(249, 197, 180);
+  border-radius: 5px;
+  width: 632px;
+  height: 100px;
+  padding: 5px;
+  background-color: rgb(254, 246, 244);
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  caret-color: red;
+}
+.contact .sectionContainer .contactInput .singleInput .content textarea:hover {
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 10px rgba(240, 46, 46, 0.3);
+}
+.contact .sectionContainer .contactInput .singleInput .content textarea::-moz-placeholder {
+  font-size: 13px;
+}
+.contact .sectionContainer .contactInput .singleInput .content textarea::placeholder {
+  font-size: 13px;
+}
+.contact .sectionContainer .contactInput .send {
+  display: flex;
+  justify-content: center;
+}
+.contact .sectionContainer .contactInput .send .btn {
+  justify-content: center;
+  width: 150px;
+  height: 45px;
+}
+
+.lookUp {
+  max-width: 100%;
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+  display: flex;
+  justify-content: center;
+}
+.lookUp .sectionContainer {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+  width: 65%;
+  height: 600px;
+  border: 1px solid rgb(247, 89, 9);
+  border-radius: 16px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  gap: 7rem;
+}
+.lookUp .sectionContainer .lookUpInput {
+  display: grid;
+  justify-items: center;
+  gap: 2rem;
+}
+.lookUp .sectionContainer .lookUpInput .header-lookUp {
+  font-weight: 600;
+  margin-top: -50px;
+}
+.lookUp .sectionContainer .lookUpInput .header-lookUp h1 {
+  color: rgb(8, 117, 77);
+}
+.lookUp .sectionContainer .lookUpInput .singleInput input {
+  outline: 1px solid rgb(249, 197, 180);
+  border-radius: 5px;
+  width: 400px;
+  height: 45px;
+  padding: 5px;
+  background-color: rgb(254, 246, 244);
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  caret-color: red;
+}
+.lookUp .sectionContainer .lookUpInput .singleInput input:hover {
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 10px rgba(240, 46, 46, 0.3);
+}
+.lookUp .sectionContainer .lookUpInput .singleInput input::-moz-placeholder {
+  font-size: 13px;
+}
+.lookUp .sectionContainer .lookUpInput .singleInput input::placeholder {
+  font-size: 13px;
+}
+.lookUp .sectionContainer .lookUpInput .singleInput input[type=text] {
+  width: 435px;
+  height: 45px;
+}
+.lookUp .sectionContainer .lookUpInput .btnLookUp .btn {
+  justify-content: center;
+  width: 150px;
+  height: 45px;
+}
+.lookUp .sectionContainer .lookUpInput .error {
+  color: #f20707;
+  font-size: 15px;
+}
+.lookUp .sectionContainer .lineBackground {
+  background-color: rgb(213, 217, 221);
+  width: 2px;
+  height: 400px;
+}
+.lookUp .sectionContainer .ticketContainerSection {
+  display: grid;
+  gap: 1rem;
+  position: relative;
+  scroll-behavior: smooth;
+}
+.lookUp .sectionContainer .ticketContainerSection .infoTicketContainer {
+  justify-items: center;
+  flex-shrink: 0;
+}
+.lookUp .sectionContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket {
+  border-top: 1px solid rgb(195, 195, 195);
+  border-left: 1px solid rgb(195, 195, 195);
+  border-right: 1px solid rgb(195, 195, 195);
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 0 5px rgba(66, 66, 66, 0.2);
+}
+.lookUp .sectionContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .headerBody {
+  justify-content: center;
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+}
+.lookUp .sectionContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .headerBody h4 {
+  font-weight: 600;
+}
+.lookUp .sectionContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .headerBody .share {
+  background-color: rgb(227, 230, 234);
+  width: 30px;
+  height: 30px;
+  padding-left: 5px;
+  border-radius: 15px;
+}
+.lookUp .sectionContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .headerBody .download {
+  background-color: rgb(227, 230, 234);
+  width: 30px;
+  height: 30px;
+  padding-left: 7px;
+  border-radius: 15px;
+}
+.lookUp .sectionContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .qrCode {
+  display: flex;
+  justify-content: center;
+}
+.lookUp .sectionContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody {
+  display: grid;
+  grid-template-columns: repeat(2, 30% 70%);
+  align-items: center;
+  width: 300px;
+  margin: 10px;
+}
+.lookUp .sectionContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody .contentLeft {
+  grid-column: 1;
+  text-align: left;
+}
+.lookUp .sectionContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody .contentLeft .l1 {
+  position: absolute;
+  margin-top: -120px;
+}
+.lookUp .sectionContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody .contentLeft .l2 {
+  position: absolute;
+  margin-top: -65px;
+}
+.lookUp .sectionContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody .contentLeft .l3 {
+  position: absolute;
+  margin-top: -32px;
+}
+.lookUp .sectionContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody .contentLeft .l4 {
+  position: absolute;
+}
+.lookUp .sectionContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody .contentLeft .l5 {
+  position: absolute;
+  margin-top: 33px;
+}
+.lookUp .sectionContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody .contentLeft .l6 {
+  position: absolute;
+  margin-top: 65px;
+}
+.lookUp .sectionContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody .contentLeft .l7 {
+  position: absolute;
+  margin-top: 97px;
+}
+.lookUp .sectionContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody .contentRight {
+  grid-column: 2;
+  text-align: right;
+}
+.lookUp .sectionContainer .ticketContainerSection .infoTicketContainer .bodyInfoTicket .contentBody .contentRight p {
+  padding: 5px;
+  color: #000000;
+}
+.lookUp .sectionContainer .ticketContainerSection .infoTicketContainer .footerInfoTicket {
+  background-color: rgb(247, 247, 247);
+  border-bottom: 1px solid rgb(195, 195, 195);
+  border-left: 1px solid rgb(195, 195, 195);
+  border-right: 1px solid rgb(195, 195, 195);
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 0 0 5px rgba(66, 66, 66, 0.2);
+  width: 322px;
+  padding: 10px;
+}
+.lookUp .sectionContainer .ticketContainerSection .infoTicketContainer .footerInfoTicket .tb {
+  color: rgb(8, 117, 77);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.lookUp .sectionContainer .ticketContainerSection .ticketValidity {
+  display: flex;
+  justify-content: center;
+}
+.lookUp .sectionContainer .ticketContainerSection .ticketValidity .valid {
+  color: rgb(155, 204, 150);
+  font-size: 15px;
+}
+.lookUp .sectionContainer .ticketContainerSection .ticketValidity .expired {
+  color: #f20707;
+  font-size: 15px;
+}
+.lookUp .sectionContainer .backgroundLookUp img {
+  width: 322px;
+  height: 362px;
+  border-radius: 10px;
+}
+
+.news {
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+  display: flex;
+  justify-content: center;
+}
+.news .sectionContainerNews {
+  justify-items: center;
+  gap: 2rem;
+  width: 1600px;
+}
+.news .sectionContainerNews .featuredNews .headerFeatureNews {
+  gap: 2rem;
+}
+.news .sectionContainerNews .featuredNews .headerFeatureNews h1 {
+  color: rgb(8, 117, 77);
+  font-weight: 600;
+}
+.news .sectionContainerNews .featuredNews .headerFeatureNews .line {
+  background-color: rgb(8, 117, 77);
+  width: 1030px;
+  height: 2px;
+}
+.news .sectionContainerNews .featuredNews .sectionContainerContentMulti {
+  gap: 1rem;
+  justify-content: center;
+  position: relative;
+}
+.news .sectionContainerNews .featuredNews .sectionContainerContentMulti .contentFeatureNews {
+  width: 600px;
+  margin-top: -90px;
+}
+.news .sectionContainerNews .featuredNews .sectionContainerContentMulti .contentFeatureNews .singleFeatureNews {
+  gap: 1rem;
+}
+.news .sectionContainerNews .featuredNews .sectionContainerContentMulti .contentFeatureNews .singleFeatureNews .imgFeatureNews {
+  width: 100%;
+  border-radius: 10px;
+}
+.news .sectionContainerNews .featuredNews .sectionContainerContentMulti .contentFeatureNews .singleFeatureNews .imgFeatureNews:hover {
+  box-shadow: 0 0 15px rgba(242, 117, 78, 0.9);
+}
+.news .sectionContainerNews .featuredNews .sectionContainerContentMulti .contentFeatureNews .singleFeatureNews .titleNews {
+  font-weight: 500;
+  font-size: 19px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.news .sectionContainerNews .featuredNews .sectionContainerContentMulti .contentFeatureNews .singleFeatureNews .titleNews:hover {
+  color: rgb(242, 117, 78);
+}
+.news .sectionContainerNews .featuredNews .sectionContainerContentMulti .contentFeatureNews .singleFeatureNews .dateSubmitted {
+  color: #525151;
+  font-size: 15px;
+}
+.news .sectionContainerNews .featuredNews .sectionContainerContentMulti .contentFeatureNewsMulti {
+  width: 600px;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  display: grid;
+  gap: 10px;
+}
+.news .sectionContainerNews .featuredNews .sectionContainerContentMulti .contentFeatureNewsMulti .multiFeatureNews {
+  gap: 8px;
+}
+.news .sectionContainerNews .featuredNews .sectionContainerContentMulti .contentFeatureNewsMulti .multiFeatureNews .imgFeatureNews {
+  width: 100%;
+  border-radius: 10px;
+}
+.news .sectionContainerNews .featuredNews .sectionContainerContentMulti .contentFeatureNewsMulti .multiFeatureNews .imgFeatureNews:hover {
+  box-shadow: 0 0 15px rgba(242, 117, 78, 0.9);
+}
+.news .sectionContainerNews .featuredNews .sectionContainerContentMulti .contentFeatureNewsMulti .multiFeatureNews .titleNews {
+  font-weight: 500;
+  font-size: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.news .sectionContainerNews .featuredNews .sectionContainerContentMulti .contentFeatureNewsMulti .multiFeatureNews .titleNews:hover {
+  color: rgb(242, 117, 78);
+}
+.news .sectionContainerNews .featuredNews .sectionContainerContentMulti .contentFeatureNewsMulti .multiFeatureNews .dateSubmitted {
+  color: #525151;
+  font-size: 15px;
+}
+.news .sectionContainerNews .featuredNews .focusContainer {
+  margin-top: 20px;
+}
+.news .sectionContainerNews .featuredNews .focusContainer .banner {
+  display: grid;
+  justify-items: center;
+  background-color: rgb(255, 142, 40);
+  width: 270px;
+  height: 224px;
+  border-radius: 10px;
+  gap: 3rem;
+}
+.news .sectionContainerNews .featuredNews .focusContainer .banner .headerBanner {
+  color: #f0f0f0;
+  font-weight: 600;
+  font-size: 30px;
+  margin-top: 70px;
+}
+.news .sectionContainerNews .featuredNews .focusContainer .banner p {
+  color: #f0f0f0;
+  margin-top: -60px;
+  font-size: 16px;
+}
+.news .sectionContainerNews .allNews {
+  width: 1400px;
+  display: grid;
+  justify-items: center;
+}
+.news .sectionContainerNews .allNews .headerAllNews {
+  gap: 2rem;
+}
+.news .sectionContainerNews .allNews .headerAllNews h1 {
+  color: rgb(8, 117, 77);
+  font-weight: 600;
+}
+.news .sectionContainerNews .allNews .headerAllNews .line {
+  background-color: rgb(8, 117, 77);
+  width: 1045px;
+  height: 2px;
+}
+.news .sectionContainerNews .allNews .containerAllNews {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.news .sectionContainerNews .allNews .containerAllNews .contentNews {
+  gap: 1rem;
+  width: 600px;
+}
+.news .sectionContainerNews .allNews .containerAllNews .contentNews .imgAllNews {
+  width: 300px;
+}
+.news .sectionContainerNews .allNews .containerAllNews .contentNews .imgAllNews .imgALL {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.news .sectionContainerNews .allNews .containerAllNews .contentNews .imgAllNews .imgALL:hover {
+  box-shadow: 0 0 15px rgba(242, 117, 78, 0.9);
+}
+.news .sectionContainerNews .allNews .containerAllNews .contentNews .titleAllNews {
+  gap: 1rem;
+  width: 300px;
+  margin-top: -100px;
+}
+.news .sectionContainerNews .allNews .containerAllNews .contentNews .titleAllNews h4 {
+  font-weight: 500;
+  font-size: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 60px;
+}
+.news .sectionContainerNews .allNews .containerAllNews .contentNews .titleAllNews h4:hover {
+  color: rgb(242, 117, 78);
+}
+.news .sectionContainerNews .allNews .containerAllNews .contentNews .titleAllNews span {
+  color: #525151;
+  font-size: 15px;
+}
+.news .sectionContainerNews .allNews .pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+}
+.news .sectionContainerNews .allNews .pagination button {
+  border: 1px solid rgb(8, 117, 77);
+  border-radius: 5px;
+  background-color: white;
+  color: rgb(8, 117, 77);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.news .sectionContainerNews .allNews .pagination button:disabled {
+  background-color: rgb(8, 117, 77);
+  color: white;
+  cursor: not-allowed;
+}
+.news .sectionContainerNews .allNews .pagination button:hover {
+  box-shadow: 0 0 10px rgba(8, 117, 77, 0.9);
+}
+
+.detailNews {
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+  display: flex;
+  justify-content: center;
+}
+.detailNews .sectionContainerDetail {
+  gap: 1rem;
+  justify-items: center;
+  width: 1090px;
+}
+.detailNews .sectionContainerDetail .containerDetailNews {
+  row-gap: 1rem;
+}
+.detailNews .sectionContainerDetail .containerDetailNews .titleDetailNews h1 {
+  font-weight: 600;
+}
+.detailNews .sectionContainerDetail .containerDetailNews .contentDetailNews {
+  line-height: 1.6;
+}
+.detailNews .sectionContainerDetail .containerRelatedNews .headerRelatedNews {
+  gap: 10px;
+}
+.detailNews .sectionContainerDetail .containerRelatedNews .headerRelatedNews h1 {
+  font-weight: 600;
+  color: rgb(8, 117, 77);
+}
+.detailNews .sectionContainerDetail .containerRelatedNews .headerRelatedNews .line {
+  background-color: rgb(8, 117, 77);
+  width: 900px;
+  height: 2px;
+}
+.detailNews .sectionContainerDetail .containerRelatedNews .headerRelatedNews span {
+  color: #fe0e0e;
+  font-size: 14px;
+}
+.detailNews .sectionContainerDetail .containerRelatedNews .containerAllNews {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.detailNews .sectionContainerDetail .containerRelatedNews .containerAllNews .contentNews {
+  gap: 1rem;
+  width: 600px;
+}
+.detailNews .sectionContainerDetail .containerRelatedNews .containerAllNews .contentNews .imgAllNews {
+  width: 300px;
+}
+.detailNews .sectionContainerDetail .containerRelatedNews .containerAllNews .contentNews .imgAllNews .imgALL {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.detailNews .sectionContainerDetail .containerRelatedNews .containerAllNews .contentNews .imgAllNews .imgALL:hover {
+  box-shadow: 0 0 15px rgba(242, 117, 78, 0.9);
+}
+.detailNews .sectionContainerDetail .containerRelatedNews .containerAllNews .contentNews .titleAllNews {
+  gap: 1rem;
+  width: 300px;
+  margin-top: -100px;
+}
+.detailNews .sectionContainerDetail .containerRelatedNews .containerAllNews .contentNews .titleAllNews h4 {
+  font-weight: 500;
+  font-size: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 60px;
+}
+.detailNews .sectionContainerDetail .containerRelatedNews .containerAllNews .contentNews .titleAllNews h4:hover {
+  color: rgb(242, 117, 78);
+}
+.detailNews .sectionContainerDetail .containerRelatedNews .containerAllNews .contentNews .titleAllNews span {
+  color: #525151;
+  font-size: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .navBar {
+    align-items: center;
+  }
+  .navBar .navBarOne .none {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .navBar .navBarOne .none li {
+    font-size: 13px;
+    gap: 0.5rem;
+    color: var(--textColor);
+  }
+  .navBar .navBarOne .none li:hover {
+    color: var(--PrimaryColor);
+    text-decoration: underline;
+  }
+  .navBar .navBarTwo {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navBar .navBarTwo .logoDiv .Logo {
+    width: 125px;
+    height: 125px;
+  }
+  .navBar .navBarTwo .menu {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  .navBar .navBarTwo .menu .listItem {
+    padding: 0 0.5rem;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--textColor);
+    font-weight: 700;
+  }
+  .navBar .navBarTwo .menu .listItem:hover {
+    color: var(--PrimaryColor);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: #228B22;
+    text-decoration-thickness: 2px;
+    -webkit-text-decoration-skip-ink: none;
+            text-decoration-skip-ink: none;
+    transition: transform 0.3s ease;
+    transform-origin: left center;
+    transform: translateY(-7px);
+    transition: var(--transition);
+  }
+  .navBar .navBarTwo .btnOne, .navBar .navBarTwo .toggleIcon {
+    display: none;
+  }
+  .login {
+    display: flex;
+    justify-content: center;
+    padding-top: 15rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .login .sectionContainer {
+    width: 100%;
+  }
+  .login .sectionContainer .imgLogin {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .home {
+    padding-top: 16rem;
+    padding-bottom: 10rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    margin-bottom: -100px;
+  }
+  .home .videoDiv {
+    width: 100%;
+  }
+  .home .videoDiv .video {
+    border-radius: 16rem;
+  }
+  .search {
+    display: flex;
+    justify-content: center;
+  }
+  .search .sectionContainer {
+    max-width: 90%;
+  }
+  .search .sectionContainer .searchInputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+  .search .sectionContainer .btnSearch {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -50px;
+  }
+  .content .sectionContainer .infoDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+  .footer .sectionContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 10px;
+    justify-content: center;
+    gap: 5rem;
+  }
+  .footer .sectionContainer .footerLinks {
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 941px) {
+  .navBar .navBarTwo .navBarMenu .menu {
+    gap: 0.1rem;
+  }
+  .home {
+    padding-top: 16rem;
+    padding-bottom: 10rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin-bottom: -100px;
+  }
+  .home .videoDiv {
+    width: 100%;
+  }
+  .home .videoDiv .video {
+    border-radius: 16rem;
+  }
+  .search {
+    display: flex;
+    justify-content: center;
+  }
+  .search .sectionContainer {
+    max-width: 90%;
+  }
+  .search .sectionContainer .searchInputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+  .search .sectionContainer .btnSearch {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -50px;
+  }
+  .content .sectionContainer .infoDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+  .footer .sectionContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 10px;
+    justify-content: center;
+    gap: 5rem;
+  }
+  .footer .sectionContainer .footerLinks {
+    justify-content: center;
+  }
+  .login {
+    display: flex;
+    justify-content: center;
+    padding-top: 15rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .login .sectionContainer {
+    width: 100%;
+  }
+  .login .sectionContainer .imgLogin {
+    display: none;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .navBar .navBarTwo .logoDiv {
+    padding-left: 220px;
+  }
+  .navBar .navBarTwo .navBarMenu .menu {
+    gap: 3rem;
+  }
+  .navBar .navBarTwo .navBarMenu .menu li {
+    font-size: 18px;
+  }
+  .navBar .navBarTwo .btn {
+    margin-right: 220px;
+  }
+  .home .mainText {
+    margin-top: -50px;
+  }
+  .home .homeImages .videoDiv {
+    width: 80%;
+    height: 500px;
+  }
+  .home .homeImages .videoDiv .video {
+    width: 100%;
+    height: 100%;
+    margin-top: -10px;
+    border-radius: 20rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .home .homeImages .bus {
+    width: 30%;
+    top: 30%;
+  }
+  .search {
+    display: flex;
+    justify-content: center;
+    padding-left: 250px;
+    padding-right: 250px;
+  }
+  .search .sectionContainer {
+    max-width: 100%;
+  }
+  .search .sectionContainer .searchInputs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+  }
+  .search .sectionContainer .btnSearch {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -50px;
+  }
+  .footer .sectionContainer {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 10px;
+    padding-left: 250px;
+    padding-right: 250px;
+    justify-content: center;
+  }
+  .footer .sectionContainer .footerLinks {
+    justify-content: center;
+  }
+  .login {
+    max-width: 100%;
+    padding: 15rem;
+  }
+  .login .sectionContainer {
+    display: flex;
+  }
+  .login .sectionContainer .imgLogin {
+    display: flex;
+  }
+}
+@media screen and (max-width: 768px) {
+  .login {
+    display: flex;
+    justify-content: center;
+    padding-top: 15rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .login .sectionContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .login .sectionContainer .imgLogin {
+    display: none;
+  }
+  .login .sectionContainer .loginInput {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .login .sectionContainer .loginInput .header-login {
+    font-size: 24px;
+  }
+  .login .sectionContainer .loginInput .btnSubmit {
+    justify-content: center;
+    flex-direction: row;
+  }
+  .login .sectionContainer .loginInput .btnSubmit .btns {
+    display: flex;
+    justify-content: center;
+    width: 180px;
+    color: rgb(239, 82, 34);
+    font-size: 17px;
+    font-weight: 500;
+    border: none;
+    border-bottom: 2px solid rgb(239, 82, 34);
+  }
+  .login .sectionContainer .loginInput .btnSubmit .gray {
+    border-bottom: 2px solid var(--borderColor);
+    color: #878787;
+  }
+  .login .sectionContainer .loginInput .singleInput {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 360px;
+    height: 55px;
+    background-color: rgb(254, 246, 244);
+    border: 1px solid rgb(249, 197, 180);
+    box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+    border-radius: 8px;
+  }
+  .login .sectionContainer .loginInput .singleInput:hover {
+    color: rgb(244, 134, 100);
+    border: 1px solid rgb(247, 89, 9);
+    box-shadow: 0 0 10px rgba(240, 46, 46, 0.3);
+  }
+  .login .sectionContainer .loginInput .singleInput .iconDiv {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .login .sectionContainer .loginInput .singleInput input {
+    width: 400px;
+    background-color: rgb(254, 246, 244);
+    caret-color: red;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+  }
+  .login .sectionContainer .loginInput .singleInput .password-toggle-icon {
+    margin-right: 6px;
+    color: rgb(156, 163, 175);
+  }
+  .login .sectionContainer .loginInput .forgot-password {
+    text-decoration: underline;
+    color: rgb(255, 77, 79);
+    margin-right: 190px;
+  }
+  .login .sectionContainer .loginInput .forgot-password:hover {
+    color: #f20707;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+    transform: translateX(-15px);
+  }
+  .login .sectionContainer .loginInput .return {
+    text-decoration: underline;
+    color: rgb(255, 77, 79);
+    margin-left: 260px;
+    margin-top: -50px;
+  }
+  .login .sectionContainer .loginInput .return:hover {
+    color: #f20707;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+    transform: translateX(15px);
+  }
+}
+@media screen and (max-width: 430px) {
+  .login {
+    display: flex;
+    justify-content: center;
+    padding-top: 15rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .login .sectionContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .login .sectionContainer .imgLogin {
+    display: none;
+  }
+  .login .sectionContainer .loginInput {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .login .sectionContainer .loginInput .header-login {
+    font-size: 24px;
+  }
+  .login .sectionContainer .loginInput .btnSubmit {
+    justify-content: center;
+    flex-direction: row;
+  }
+  .login .sectionContainer .loginInput .btnSubmit .btns {
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    color: rgb(239, 82, 34);
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-bottom: 2px solid rgb(239, 82, 34);
+  }
+  .login .sectionContainer .loginInput .btnSubmit .gray {
+    border-bottom: 2px solid var(--borderColor);
+    color: #878787;
+  }
+  .login .sectionContainer .loginInput .singleInput {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 310px;
+    height: 55px;
+    background-color: rgb(254, 246, 244);
+    border: 1px solid rgb(249, 197, 180);
+    box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+    border-radius: 8px;
+  }
+  .login .sectionContainer .loginInput .singleInput:hover {
+    color: rgb(244, 134, 100);
+    border: 1px solid rgb(247, 89, 9);
+    box-shadow: 0 0 10px rgba(240, 46, 46, 0.3);
+  }
+  .login .sectionContainer .loginInput .singleInput .iconDiv {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .login .sectionContainer .loginInput .singleInput input {
+    width: 400px;
+    background-color: rgb(254, 246, 244);
+    caret-color: red;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+  }
+  .login .sectionContainer .loginInput .singleInput .password-toggle-icon {
+    margin-right: 6px;
+    color: rgb(156, 163, 175);
+  }
+  .login .sectionContainer .loginInput .forgot-password {
+    text-decoration: underline;
+    color: rgb(255, 77, 79);
+    margin-right: 170px;
+  }
+  .login .sectionContainer .loginInput .forgot-password:hover {
+    color: #f20707;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+    transform: translatex(-15px);
+  }
+  .login .sectionContainer .loginInput .return {
+    text-decoration: underline;
+    color: rgb(255, 77, 79);
+    margin-left: 240px;
+    margin-top: -50px;
+  }
+  .login .sectionContainer .loginInput .return:hover {
+    color: #f20707;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+    transform: translatex(15px);
+  }
+}
+.admin-layout {
+  display: flex;
+}
+.admin-layout .admin-content {
+  flex-grow: 1;
+  background-color: rgb(213, 217, 221);
+}
+
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  background-color: #1a1a2e;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.sidebar .sidebar-header {
+  margin-bottom: 20px;
+}
+.sidebar .sidebar-header img {
+  border-radius: 0px 90px 90px 0px;
+  margin-left: -20px;
+  height: 205px;
+  width: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.sidebar .sidebar-nav {
+  width: 100%;
+}
+.sidebar .sidebar-nav .sidebar-link {
+  display: flex;
+  align-items: center;
+  padding-top: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
+  border-right: none;
+}
+.sidebar .sidebar-nav .sidebar-link:hover {
+  color: rgb(24, 161, 251);
+  font-weight: 600;
+  transition: transform 0.3s ease;
+  transform: translatex(20px);
+  border-bottom: 2px solid rgb(24, 161, 251);
+}
+.sidebar .sidebar-nav .sidebar-link svg {
+  margin-right: 10px;
+}
+.sidebar .sidebar-nav .sidebar-link.active {
+  border-left: 8px solid rgb(24, 161, 251);
+  color: rgb(24, 161, 251);
+  font-weight: 600;
+}
+.sidebar .sidebar-nav .sidebar-link.active svg {
+  margin-left: 30px;
+  color: rgb(24, 161, 251);
+}
+
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .headerRouteBusAdmin {
+  background-color: rgb(240, 244, 244);
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .headerRouteBusAdmin .icon {
+  margin-left: 30px;
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .headerRouteBusAdmin h1 {
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  margin-left: 20px;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 8px rgba(174, 174, 174, 0.3);
+  border: 2px solid rgb(190, 190, 190);
+  padding: 20px;
+  border-radius: 8px;
+  width: 1200px;
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer h2 {
+  font-size: 25px;
+  color: rgb(8, 117, 77);
+  font-weight: 600;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 2rem;
+  -moz-column-gap: 5rem;
+       column-gap: 5rem;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup label {
+  font-size: 16px;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup input {
+  outline: 1px solid rgb(249, 197, 180);
+  border-radius: 8px;
+  width: 200px;
+  height: 35px;
+  padding: 5px;
+  background-color: rgb(254, 246, 244);
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  caret-color: red;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup input:hover {
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 10px rgba(240, 46, 46, 0.3);
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup input::-moz-placeholder {
+  font-size: 13px;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup input::placeholder {
+  font-size: 13px;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .departurePoint {
+  position: relative;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .departurePoint .departureInput {
+  border: 1px solid rgb(249, 197, 180);
+  border-radius: 8px;
+  width: 200px;
+  height: 35px;
+  padding: 5px;
+  background-color: rgb(254, 246, 244);
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  caret-color: red;
+  color: #878787;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .departurePoint .departureInput:hover {
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 10px rgba(240, 46, 46, 0.3);
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .departurePoint .departurePopup {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .departurePoint .departurePopup .popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  max-height: 80%;
+  overflow-y: auto;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .departurePoint .departurePopup .popup-content h4 {
+  margin-top: 0;
+  color: rgb(239, 82, 34);
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .departurePoint .departurePopup .popup-content input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 95%;
+  caret-color: red;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .departurePoint .departurePopup .popup-content input::-moz-placeholder {
+  opacity: 0.5;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .departurePoint .departurePopup .popup-content input::placeholder {
+  opacity: 0.5;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .departurePoint .departurePopup .popup-content input:hover {
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 10px rgba(240, 46, 46, 0.3);
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .departurePoint .departurePopup .popup-content .chonTinh {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  height: 157px;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .departurePoint .departurePopup .popup-content .recent-searches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .departurePoint .departurePopup .popup-content .recent-searches .recent-search-item {
+  display: flex;
+  align-items: center;
+  background: #f0f0f0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 1px solid rgb(211, 211, 211);
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .departurePoint .departurePopup .popup-content .recent-searches .recent-search-item:hover {
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .departurePoint .departurePopup .popup-content .recent-searches .recent-search-item:hover .delete-button {
+  display: flex;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .departurePoint .departurePopup .popup-content .recent-searches .recent-search-item .delete-button {
+  margin-left: 5px;
+  color: red;
+  font-weight: bold;
+  display: none;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .departurePoint .departurePopup .popup-content .recent-searches .recent-search-item button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .departurePoint .departurePopup .popup-content .close {
+  gap: 10px;
+  color: #f20707;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .destinationPoint .destinationInput {
+  border: 1px solid rgb(249, 197, 180);
+  border-radius: 8px;
+  width: 200px;
+  height: 35px;
+  padding: 5px;
+  background-color: rgb(254, 246, 244);
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  caret-color: red;
+  color: #878787;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .destinationPoint .destinationInput:hover {
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 10px rgba(240, 46, 46, 0.3);
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .destinationPoint .destinationPopup {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .destinationPoint .destinationPopup .popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  max-height: 80%;
+  overflow-y: auto;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .destinationPoint .destinationPopup .popup-content h4 {
+  margin-top: 0;
+  color: rgb(239, 82, 34);
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .destinationPoint .destinationPopup .popup-content input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 95%;
+  border: 1px solid #ccc;
+  caret-color: red;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .destinationPoint .destinationPopup .popup-content input::-moz-placeholder {
+  opacity: 0.5;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .destinationPoint .destinationPopup .popup-content input::placeholder {
+  opacity: 0.5;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .destinationPoint .destinationPopup .popup-content input:hover {
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 10px rgba(240, 46, 46, 0.3);
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .destinationPoint .destinationPopup .popup-content .chonTinh {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  height: 157px;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .destinationPoint .destinationPopup .popup-content .recent-searches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .destinationPoint .destinationPopup .popup-content .recent-searches .recent-search-item {
+  display: flex;
+  align-items: center;
+  background: #f0f0f0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 1px solid rgb(211, 211, 211);
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .destinationPoint .destinationPopup .popup-content .recent-searches .recent-search-item:hover {
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .destinationPoint .destinationPopup .popup-content .recent-searches .recent-search-item:hover .delete-button {
+  display: flex;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .destinationPoint .destinationPopup .popup-content .recent-searches .recent-search-item .delete-button {
+  margin-left: 5px;
+  color: red;
+  font-weight: bold;
+  display: none;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .destinationPoint .destinationPopup .popup-content .recent-searches .recent-search-item button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .destinationPoint .destinationPopup .popup-content .close {
+  gap: 10px;
+  color: #f20707;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .vehicleOptions {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 248, 245);
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  border: 1px solid rgb(247, 89, 9);
+  border-radius: 8px;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .vehicleOptions div {
+  padding: 10px;
+  cursor: pointer;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .vehicleOptions div:hover {
+  background-color: rgb(247, 238, 235);
+  border-radius: 8px;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .formSectionContainer .formContainer .error {
+  font-size: 16px;
+  color: #f60101;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .buttonContainer {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .buttonContainer .btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .buttonContainer .btn.add {
+  background-color: #28a745;
+  color: #fff;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .buttonContainer .btn.edit {
+  background-color: #ffc107;
+  color: #fff;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .buttonContainer .btn.delete {
+  background-color: #dc3545;
+  color: #fff;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .buttonContainer .btn.cancel {
+  background-color: #6c757d;
+  color: #fff;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .tableSectionContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .tableSectionContainer .tableContainer {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 8px rgba(174, 174, 174, 0.3);
+  border: 2px solid rgb(190, 190, 190);
+  padding: 20px;
+  border-radius: 8px;
+  width: 1200px;
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .tableSectionContainer .tableContainer h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: rgb(8, 117, 77);
+  font-size: 25px;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .tableSectionContainer .tableContainer table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .tableSectionContainer .tableContainer table th, .routeBusAdmin .sectionContaiNerRouteBusAdmin .tableSectionContainer .tableContainer table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .tableSectionContainer .tableContainer table th {
+  background-color: rgb(242, 242, 242);
+}
+.routeBusAdmin .sectionContaiNerRouteBusAdmin .tableSectionContainer .tableContainer table tbody tr:nth-child(even) {
+  background-color: rgb(247, 238, 235);
+}
+
+.tripBusAdmin .sectionContainerTripBusAdmin .headerTripBusAdmin {
+  background-color: rgb(240, 244, 244);
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .headerTripBusAdmin .icon {
+  margin-left: 30px;
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .headerTripBusAdmin h1 {
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  margin-left: 20px;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .formSectionContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .formSectionContainer .formContainer {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 8px rgba(174, 174, 174, 0.3);
+  border: 2px solid rgb(190, 190, 190);
+  padding: 20px;
+  border-radius: 8px;
+  width: 1400px;
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .formSectionContainer .formContainer h2 {
+  font-size: 25px;
+  color: rgb(8, 117, 77);
+  font-weight: 600;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .formSectionContainer .formContainer .formDetails {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 2rem;
+  -moz-column-gap: 8rem;
+       column-gap: 8rem;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .formSectionContainer .formContainer .formDetails .formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .formSectionContainer .formContainer .formDetails .formGroup label {
+  font-size: 16px;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .formSectionContainer .formContainer .formDetails .formGroup input {
+  outline: 1px solid rgb(249, 197, 180);
+  border-radius: 8px;
+  width: 200px;
+  height: 35px;
+  padding: 5px;
+  background-color: rgb(254, 246, 244);
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  caret-color: red;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .formSectionContainer .formContainer .formDetails .formGroup input:hover {
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 10px rgba(240, 46, 46, 0.3);
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .formSectionContainer .formContainer .formDetails .formGroup input::-moz-placeholder {
+  font-size: 13px;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .formSectionContainer .formContainer .formDetails .formGroup input::placeholder {
+  font-size: 13px;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .formSectionContainer .formContainer .formDetails .formGroup select {
+  outline: 1px solid rgb(249, 197, 180);
+  border-radius: 8px;
+  width: 200px;
+  height: 35px;
+  padding: 5px;
+  background-color: rgb(254, 246, 244);
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  caret-color: red;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .formSectionContainer .formContainer .formDetails .formGroup select:hover {
+  border: 1px solid rgb(247, 89, 9);
+  box-shadow: 0 0 10px rgba(240, 46, 46, 0.3);
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .vehicleOptions {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 248, 245);
+  box-shadow: 0 0 8px rgba(241, 136, 136, 0.3);
+  border: 1px solid rgb(247, 89, 9);
+  border-radius: 8px;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .vehicleOptions div {
+  padding: 10px;
+  cursor: pointer;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .formSectionContainer .formContainer .formDetails .formGroup .vehicleOptions div:hover {
+  background-color: rgb(247, 238, 235);
+  border-radius: 8px;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .formSectionContainer .formContainer .error {
+  font-size: 16px;
+  color: #f60101;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .buttonContainer {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .buttonContainer .btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .buttonContainer .btn.add {
+  background-color: #28a745;
+  color: #fff;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .buttonContainer .btn.edit {
+  background-color: #ffc107;
+  color: #fff;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .buttonContainer .btn.delete {
+  background-color: #dc3545;
+  color: #fff;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .buttonContainer .btn.cancel {
+  background-color: #6c757d;
+  color: #fff;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .tableSectionContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .tableSectionContainer .tableContainer {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 8px rgba(174, 174, 174, 0.3);
+  border: 2px solid rgb(190, 190, 190);
+  padding: 20px;
+  border-radius: 8px;
+  width: 1400px;
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .tableSectionContainer .tableContainer h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: rgb(8, 117, 77);
+  font-size: 25px;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .tableSectionContainer .tableContainer table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .tableSectionContainer .tableContainer table th, .tripBusAdmin .sectionContainerTripBusAdmin .tableSectionContainer .tableContainer table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .tableSectionContainer .tableContainer table th {
+  background-color: rgb(242, 242, 242);
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .tableSectionContainer .tableContainer table tbody tr:nth-child(odd) {
+  background-color: rgb(255, 255, 255);
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .tableSectionContainer .tableContainer table tbody tr:nth-child(even) {
+  background-color: rgb(247, 238, 235);
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .tableSectionContainer .tableContainer table tbody tr.selected {
+  background-color: rgb(253, 138, 114);
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .tableSectionContainer .tableContainer .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .tableSectionContainer .tableContainer .pagination span {
+  margin-right: 10px;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .tableSectionContainer .tableContainer .pagination button {
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  margin: 0 2px;
+  cursor: pointer;
+  background-color: #fff;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .tableSectionContainer .tableContainer .pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.tripBusAdmin .sectionContainerTripBusAdmin .tableSectionContainer .tableContainer .pagination button.active {
+  background-color: #d9534f;
+  color: #fff;
+  border-color: #d43f3a;
+}
+
+.homeAdmin .SectionContainerHomeAdmin .headerHomeAdmin {
+  background-color: rgb(240, 244, 244);
+}
+.homeAdmin .SectionContainerHomeAdmin .headerHomeAdmin .icon {
+  margin-left: 30px;
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+}
+.homeAdmin .SectionContainerHomeAdmin .headerHomeAdmin h1 {
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  margin-left: 20px;
+}/*# sourceMappingURL=main.css.map */
